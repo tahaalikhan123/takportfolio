@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    padding: 0 20px;
+    padding: 0;
 }
 
 /* Navigation Styling */
@@ -27,7 +27,7 @@ nav {
 
 nav ul {
     list-style: none;
-    text-align: center;
+    text-align: left; /* Align navigation items to the left */
 }
 
 nav ul li {
@@ -116,13 +116,14 @@ section h2 {
 .project a:hover {
     color: #0056b3;
 }
+
 /* About Me Section */
 #about {
     background: #a3ffd6;
     padding: 60px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
+    text-align: left;
 }
 
 #about img {
@@ -163,10 +164,10 @@ section h2 {
 
 /* Contact Me Section */
 .contact {
-    padding: 20px;
+    padding: 60px 20px; /* Adjust padding */
     max-width: 600px;
     margin: auto;
-    text-align: center;
+    text-align: left; /* Align content to the left */
 }
 
 .contact h2 {
