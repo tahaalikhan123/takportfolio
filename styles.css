@@ -5,19 +5,28 @@
     box-sizing: border-box;
 }
 
+/* Root variables for the color palette */
+:root {
+    --dark-blue: #26547c;
+    --red: #ef476f;
+    --yellow: #ffd166;
+    --green: #06d6a0;
+    --off-white: #fffcf9;
+}
+
 /* Body Styling */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--off-white);
+    color: var(--dark-blue);
     padding: 0 20px;
 }
 
 /* Navigation Styling */
 nav {
-    background: #1c1678;
-    color: #fff;
+    background: var(--dark-blue);
+    color: var(--off-white);
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -36,21 +45,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--off-white);
     text-decoration: none;
     padding: 5px 10px;
     transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #8576ff;
+    background: var(--yellow);
     border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
-    background: #8576ff;
-    color: #fff;
+    background: var(--red);
+    color: var(--off-white);
     padding: 60px 20px;
     text-align: left;
 }
@@ -76,14 +85,14 @@ section h2 {
     margin-bottom: 20px;
     text-align: center;
     font-weight: 700;
-    color: #1c1678;
+    color: var(--dark-blue);
 }
 
 /* Projects Styling */
 .project {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: var(--off-white);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -98,27 +107,28 @@ section h2 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 20px;
-    color: #333;
+    color: var(--dark-blue);
 }
 
 .project p {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #555;
+    color: var(--dark-blue);
 }
 
 .project a {
-    color: #007bff;
+    color: var(--green);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .project a:hover {
-    color: #0056b3;
+    color: var(--dark-blue);
 }
+
 /* About Me Section */
 #about {
-    background: #a3ffd6;
+    background: var(--green);
     padding: 60px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -139,7 +149,7 @@ section h2 {
 
 #about .bio h3 {
     margin-top: 20px;
-    color: #1c1678;
+    color: var(--dark-blue);
 }
 
 #about .bio p {
@@ -150,15 +160,15 @@ section h2 {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #1c1678;
-    color: #fff;
+    background: var(--dark-blue);
+    color: var(--off-white);
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
 }
 
 #about .button:hover {
-    background: #8576ff;
+    background: var(--yellow);
 }
 
 /* Contact Me Section */
@@ -174,7 +184,7 @@ section h2 {
 }
 
 .contact a {
-    color: #007BFF;
+    color: var(--green);
     text-decoration: none;
 }
 
@@ -203,8 +213,8 @@ section h2 {
 
 .contact form button {
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--green);
+    color: var(--off-white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -214,8 +224,8 @@ section h2 {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #1c1678;
-    color: #fff;
+    background: var(--dark-blue);
+    color: var(--off-white);
     margin-top: 20px;
 }
 
