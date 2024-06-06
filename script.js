@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
@@ -12,18 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleFormSubmit(event) {
     event.preventDefault();
     
-    let isValid = true;
+    const isValid = validateForm();
     
-    // Name validation
-    const name = document.getElementById('name');
-    const nameError = document.getElementById('nameError');
-    if (name.value.trim() === '') {
-        nameError.textContent = 'Name is required.';
-        isValid = false;
-    } else {
-        nameError.textContent = '';
+    if (isValid) {
+        // Submit the form
+        event.target.submit();
     }
-    
+}
+
+function validateForm() {
+    let isValid = true;
+
+    // Name validation
+    isValid &= validateField('name', 'Name is required.');
+
     // Email validation
     const email = document.getElementById('email');
     const emailError = document.getElementById('emailError');
@@ -34,40 +36,42 @@ function handleFormSubmit(event) {
     } else {
         emailError.textContent = '';
     }
-    
+
     // Message validation
-    const message = document.getElementById('message');
-    const messageError = document.getElementById('messageError');
-    if (message.value.trim() === '') {
-        messageError.textContent = 'Message is required.';
-        isValid = false;
+    isValid &= validateField('message', 'Message is required.');
+
+    return Boolean(isValid);
+}
+
+function validateField(fieldId, errorMessage) {
+    const field = document.getElementById(fieldId);
+    const fieldError = document.getElementById(`${fieldId}Error`);
+    if (field.value.trim() === '') {
+        fieldError.textContent = errorMessage;
+        return false;
     } else {
-        messageError.textContent = '';
-    }
-    
-    if (isValid) {
-        // Submit the form
-        event.target.submit();
+        fieldError.textContent = '';
+        return true;
     }
 }
 
-function fetchGitHubProjects() {
+async function fetchGitHubProjects() {
     const username = 'tahaalikhan123'; // Replace with your GitHub username
     const apiUrl = `https://api.github.com/users/${username}/repos`;
+    const projectsSection = document.getElementById('projects');
 
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            displayProjects(data);
-        })
-        .catch(error => {
-            console.error('Error fetching GitHub projects:', error);
-        });
+    try {
+        projectsSection.innerHTML = '<p>Loading projects...</p>';
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        displayProjects(data);
+    } catch (error) {
+        console.error('Error fetching GitHub projects:', error);
+        projectsSection.innerHTML = '<p>Error loading projects. Please try again later.</p>';
+    }
 }
 
 function displayProjects(repos) {
