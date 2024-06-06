@@ -7,12 +7,13 @@
 
 /* Root variables for the color palette */
 :root {
-    --primary: #2B3A67;
-    --secondary: #F39C12;
+    --primary: #5A7D9A;
+    --secondary: #F7C843;
     --background: #F4F4F4;
     --text: #333333;
-    --accent: #E74C3C;
+    --accent: #F28A7F;
     --white: #ffffff;
+    --black: #000000;
 }
 
 /* Body Styling */
@@ -61,7 +62,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     background: var(--primary);
-    color: var(--white);
+    color: var(--black);
     padding: 100px 20px;
     text-align: center;
 }
@@ -131,7 +132,7 @@ section h2 {
 /* About Me Section */
 #about {
     background: var(--secondary);
-    color: var(--white);
+    color: var(--black);
     padding: 60px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -152,12 +153,12 @@ section h2 {
 
 #about .bio h3 {
     margin-top: 20px;
-    color: var(--white);
+    color: var(--black);
 }
 
 #about .bio p {
     margin-bottom: 10px;
-    color: var(--white);
+    color: var(--black);
 }
 
 #about .button {
