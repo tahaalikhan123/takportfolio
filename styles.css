@@ -7,26 +7,27 @@
 
 /* Root variables for the color palette */
 :root {
-    --dark-blue: #26547c;
-    --red: #ef476f;
-    --yellow: #ffd166;
-    --green: #06d6a0;
-    --off-white: #fffcf9;
+    --black: #000000;
+    --blue: #0b60b0;
+    --light-blue: #40a2d8;
+    --light-yellow: #f0edcf;
+    --white: #ffffff; /* Assuming you want to use white as well */
 }
 
 /* Body Styling */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: var(--off-white);
-    color: var(--dark-blue);
+    background-color: var(--light-yellow);
+    color: var(--black);
     padding: 0 20px;
+    font-weight: bold; /* Make text bold */
 }
 
 /* Navigation Styling */
 nav {
-    background: var(--dark-blue);
-    color: var(--off-white);
+    background: var(--blue);
+    color: var(--white);
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -45,21 +46,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--off-white);
+    color: var(--white);
     text-decoration: none;
     padding: 5px 10px;
     transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: var(--yellow);
+    background: var(--light-blue);
     border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
-    background: var(--red);
-    color: var(--off-white);
+    background: var(--light-blue);
+    color: var(--white);
     padding: 60px 20px;
     text-align: left;
 }
@@ -85,14 +86,14 @@ section h2 {
     margin-bottom: 20px;
     text-align: center;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--blue);
 }
 
 /* Projects Styling */
 .project {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: var(--off-white);
+    background-color: var(--white);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -107,28 +108,28 @@ section h2 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 20px;
-    color: var(--dark-blue);
+    color: var(--black);
 }
 
 .project p {
     margin-bottom: 10px;
     font-size: 16px;
-    color: var(--dark-blue);
+    color: var(--black);
 }
 
 .project a {
-    color: var(--green);
+    color: var(--blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .project a:hover {
-    color: var(--dark-blue);
+    color: var(--light-blue);
 }
 
 /* About Me Section */
 #about {
-    background: var(--green);
+    background: var(--light-blue);
     padding: 60px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -149,7 +150,7 @@ section h2 {
 
 #about .bio h3 {
     margin-top: 20px;
-    color: var(--dark-blue);
+    color: var(--blue);
 }
 
 #about .bio p {
@@ -160,15 +161,15 @@ section h2 {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: var(--dark-blue);
-    color: var(--off-white);
+    background: var(--blue);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
 }
 
 #about .button:hover {
-    background: var(--yellow);
+    background: var(--light-blue);
 }
 
 /* Contact Me Section */
@@ -184,7 +185,7 @@ section h2 {
 }
 
 .contact a {
-    color: var(--green);
+    color: var(--blue);
     text-decoration: none;
 }
 
@@ -213,8 +214,8 @@ section h2 {
 
 .contact form button {
     padding: 10px 20px;
-    background-color: var(--green);
-    color: var(--off-white);
+    background-color: var(--blue);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -224,8 +225,8 @@ section h2 {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: var(--dark-blue);
-    color: var(--off-white);
+    background: var(--blue);
+    color: var(--white);
     margin-top: 20px;
 }
 
