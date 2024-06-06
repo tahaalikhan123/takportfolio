@@ -7,28 +7,29 @@
 
 /* Root variables for the color palette */
 :root {
-    --black: #000000;
-    --blue: #0b60b0;
-    --light-blue: #40a2d8;
-    --light-yellow: #f0edcf;
-    --white: #ffffff; /* Assuming you want to use white as well */
+    --primary: #2B3A67;
+    --secondary: #F39C12;
+    --background: #F4F4F4;
+    --text: #333333;
+    --accent: #E74C3C;
+    --white: #ffffff;
 }
 
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: var(--light-yellow);
-    color: var(--black);
+    background-color: var(--background);
+    color: var(--text);
     padding: 0 20px;
     font-weight: bold; /* Make text bold */
 }
 
 /* Navigation Styling */
 nav {
-    background: var(--blue);
+    background: var(--primary);
     color: var(--white);
-    padding: 10px 0;
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -42,27 +43,27 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: var(--white);
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 10px 15px;
     transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: var(--light-blue);
+    background: var(--secondary);
     border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
-    background: var(--light-blue);
+    background: var(--primary);
     color: var(--white);
-    padding: 60px 20px;
-    text-align: left;
+    padding: 100px 20px;
+    text-align: center;
 }
 
 .hero h1 {
@@ -72,21 +73,21 @@ nav ul li a:hover {
 
 .hero p {
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.25em;
     line-height: 1.6;
 }
 
 /* Section Styling */
 section {
     padding: 60px 20px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 section h2 {
     margin-bottom: 20px;
     text-align: center;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 /* Projects Styling */
@@ -107,29 +108,30 @@ section h2 {
 .project h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 20px;
-    color: var(--black);
+    font-size: 1.25em;
+    color: var(--primary);
 }
 
 .project p {
     margin-bottom: 10px;
-    font-size: 16px;
-    color: var(--black);
+    font-size: 1em;
+    color: var(--text);
 }
 
 .project a {
-    color: var(--blue);
+    color: var(--secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .project a:hover {
-    color: var(--light-blue);
+    color: var(--accent);
 }
 
 /* About Me Section */
 #about {
-    background: var(--light-blue);
+    background: var(--secondary);
+    color: var(--white);
     padding: 60px 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -150,18 +152,19 @@ section h2 {
 
 #about .bio h3 {
     margin-top: 20px;
-    color: var(--blue);
+    color: var(--white);
 }
 
 #about .bio p {
     margin-bottom: 10px;
+    color: var(--white);
 }
 
 #about .button {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: var(--blue);
+    background: var(--primary);
     color: var(--white);
     text-decoration: none;
     border-radius: 5px;
@@ -169,7 +172,7 @@ section h2 {
 }
 
 #about .button:hover {
-    background: var(--light-blue);
+    background: var(--accent);
 }
 
 /* Contact Me Section */
@@ -182,16 +185,18 @@ section h2 {
 
 .contact h2 {
     margin-bottom: 20px;
+    color: var(--primary);
 }
 
 .contact a {
-    color: var(--blue);
+    color: var(--secondary);
     text-decoration: none;
 }
 
 .contact .social-media a {
     display: inline-block;
     margin: 10px;
+    color: var(--primary);
 }
 
 .contact form {
@@ -214,7 +219,7 @@ section h2 {
 
 .contact form button {
     padding: 10px 20px;
-    background-color: var(--blue);
+    background-color: var(--secondary);
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -224,8 +229,8 @@ section h2 {
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: var(--blue);
+    padding: 15px 0;
+    background: var(--primary);
     color: var(--white);
     margin-top: 20px;
 }
