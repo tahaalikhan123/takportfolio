@@ -7,14 +7,13 @@
 
 /* Root variables for the color palette */
 :root {
-    --primary: #000000;        /* Black */
-    --secondary: #d4af37;      /* Gold */
-    --background: #f5f5f5;     /* Very light grey for better readability */
-    --text: #000000;           /* Black for primary text */
-    --accent: #b8860b;         /* Darker Gold for accents */
-    --highlight: #ffdf00;      /* Bright Gold for highlights */
-    --white: #ffffff;          /* White */
-    --grey: #333333;           /* Dark grey for text and background variations */
+    --primary: #5A7D9A;
+    --secondary: #F7C843;
+    --background: #F4F4F4;
+    --text: #333333;
+    --accent: #F28A7F;
+    --white: #ffffff;
+    --black: #000000;
 }
 
 /* Body Styling */
@@ -35,18 +34,15 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style: none;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 0;
 }
 
 nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
@@ -54,19 +50,18 @@ nav ul li a {
     color: var(--white);
     text-decoration: none;
     padding: 10px 15px;
-    transition: background 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
     background: var(--secondary);
-    color: var(--black);
+    border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
     background: var(--primary);
-    color: var(--white);
+    color: var(--black);
     padding: 100px 20px;
     text-align: center;
     margin-top: 60px;
@@ -154,8 +149,6 @@ section h2 {
 #about .bio {
     text-align: left;
     margin-top: 20px;
-    max-width: 800px;
-    margin: auto;
 }
 
 #about .bio h3 {
@@ -201,20 +194,10 @@ section h2 {
     text-decoration: none;
 }
 
-.contact .social-media {
-    margin: 20px 0;
-}
-
 .contact .social-media a {
     display: inline-block;
-    margin: 0 10px;
+    margin: 10px;
     color: var(--primary);
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.contact .social-media a:hover {
-    color: var(--accent);
 }
 
 .contact form {
@@ -222,16 +205,10 @@ section h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact form label {
     margin: 10px 0 5px 0;
-    width: 100%;
-    text-align: left;
 }
 
 .contact form input, .contact form textarea {
@@ -240,7 +217,6 @@ section h2 {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
 }
 
 .contact form button {
@@ -250,11 +226,6 @@ section h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.contact form button:hover {
-    background-color: var(--accent);
 }
 
 /* Footer Styling */
@@ -264,11 +235,6 @@ footer {
     background: var(--primary);
     color: var(--white);
     margin-top: 20px;
-    font-size: 1em;
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Animations */
@@ -285,12 +251,8 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
     nav ul li {
+        display: block;
         margin: 10px 0;
     }
 
@@ -314,13 +276,5 @@ footer p {
 
     section h2 {
         font-size: 1.5em;
-    }
-
-    .project {
-        padding: 15px;
-    }
-
-    .contact form {
-        padding: 15px;
     }
 }
