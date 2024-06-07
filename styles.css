@@ -7,13 +7,14 @@
 
 /* Root variables for the color palette */
 :root {
-    --primary: #000000;
-    --secondary: #cfe8ef;
-    --background: #c6dbf0;
-    --text: #000000;
-    --accent: #aed1e6;
-    --white: #ffffff;
-    --black: #000000;
+    --primary: #000000;        /* Black */
+    --secondary: #d4af37;      /* Gold */
+    --background: #f5f5f5;     /* Very light grey for better readability */
+    --text: #000000;           /* Black for primary text */
+    --accent: #b8860b;         /* Darker Gold for accents */
+    --highlight: #ffdf00;      /* Bright Gold for highlights */
+    --white: #ffffff;          /* White */
+    --grey: #333333;           /* Dark grey for text and background variations */
 }
 
 /* Body Styling */
