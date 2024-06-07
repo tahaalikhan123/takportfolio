@@ -7,13 +7,13 @@
 
 /* Root variables for the color palette */
 :root {
-    --primary: var(--color-medium-blue); /* Using the medium blue as primary */
-    --secondary: var(--color-medium-teal); /* Using the medium teal blue as secondary */
-    --background: var(--color-light-sky); /* Light sky blue as background */
-    --text: #333333; /* Keep text color the same */
-    --accent: var(--color-soft-blue); /* Soft blue as accent */
-    --white: #ffffff; /* Keep white */
-    --black: #000000; /* Keep black */
+    --primary: #000000;
+    --secondary: #cfe8ef;
+    --background: #c6dbf0;
+    --text: #000000;
+    --accent: #aed1e6;
+    --white: #ffffff;
+    --black: #000000;
 }
 
 /* Body Styling */
