@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Additional server-side checks can be added here
 
-    $to = "your-email@gmail.com";
+    $to = "tahaalikhan30@gmail.com";
     $subject = "Contact Form Submission from $name";
     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
     $headers = "From: $email" . "\r\n" .
