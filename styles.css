@@ -3,33 +3,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7; /* Light mode primary background */
-    color: #333333; /* Light mode primary text */
 }
 
-/* Dark mode styles */
-body.dark-mode {
-    background-color: #333333; /* Dark mode primary background */
-    color: #f7f7f7; /* Dark mode primary text */
-}
-
-/* Header styles */
 header {
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #333; /* Light mode header background */
+    background-color: black;
     color: white;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-body.dark-mode header {
-    background-color: #1a1a1a; /* Dark mode header background */
-}
-
-/* Navbar styles */
 nav {
     display: flex;
     justify-content: center;
@@ -45,33 +31,21 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #0066cc; /* Light mode accent */
-    color: white;
+    background-color: gold;
+    color: black;
 }
 
-body.dark-mode nav a:hover {
-    background-color: #66b2ff; /* Dark mode accent */
-}
-
-/* Main content styles */
 main {
     margin-top: 60px; /* Offset for fixed header */
 }
 
-/* Container styles */
 .container {
     padding: 60px 20px;
     min-height: 20vh;
-    background-color: #ffffff; /* Light mode secondary background */
 }
 
-body.dark-mode .container {
-    background-color: #282828; /* Dark mode secondary background */
-}
-
-/* Section specific styles */
 #home {
-    background-color: #fdfdfde3;
+    background-color: #f0f8ff;
 }
 
 /* Projects section styling */
@@ -83,7 +57,7 @@ body.dark-mode .container {
 #github-contributions img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #080808;
+    border: 1px solid #ddd;
     border-radius: 10px;
 }
 
@@ -109,11 +83,7 @@ body.dark-mode .container {
 
 .repo h3 a {
     text-decoration: none;
-    color: #0066cc; /* Light mode accent */
-}
-
-body.dark-mode .repo h3 a {
-    color: #66b2ff; /* Dark mode accent */
+    color: #0366d6;
 }
 
 .repo p {
@@ -134,10 +104,6 @@ body.dark-mode .repo h3 a {
     text-align: left;
     padding: 40px;
     background-color: #fafad2; /* Light yellow background */
-}
-
-body.dark-mode #about-me {
-    background-color: #282828; /* Dark mode secondary background */
 }
 
 #about-me h2 {
@@ -166,11 +132,7 @@ body.dark-mode #about-me {
     font-size: 1.8em;
     margin-top: 30px;
     margin-bottom: 10px;
-    color: #333; /* Light mode text color */
-}
-
-body.dark-mode .bio h3 {
-    color: #e0e0e0; /* Dark mode text color */
+    color: #333;
 }
 
 .skills ul, .education ul {
@@ -185,11 +147,7 @@ body.dark-mode .bio h3 {
 .skills h4 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #444; /* Light mode text color */
-}
-
-body.dark-mode .skills h4 {
-    color: #bdbdbd; /* Dark mode text color */
+    color: #444;
 }
 
 .skills ul ul {
@@ -201,6 +159,7 @@ body.dark-mode .skills h4 {
     margin-bottom: 10px;
 }
 
+/* Add media queries for responsiveness */
 @media (max-width: 768px) {
     #about-me {
         padding: 20px;
@@ -220,10 +179,6 @@ body.dark-mode .skills h4 {
     text-align: center;
 }
 
-body.dark-mode .contact {
-    background-color: #282828; /* Dark mode secondary background */
-}
-
 .contact h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -235,13 +190,9 @@ body.dark-mode .contact {
 }
 
 .contact a {
-    color: #0066cc; /* Light mode accent */
+    color: #0366d6;
     text-decoration: none;
     font-weight: bold;
-}
-
-body.dark-mode .contact a {
-    color: #66b2ff; /* Dark mode accent */
 }
 
 .contact a:hover {
@@ -256,12 +207,8 @@ body.dark-mode .contact a {
     margin: 0 10px;
     font-size: 1.5em;
     display: inline-block;
-    color: #0066cc; /* Light mode accent */
+    color: #0366d6;
     text-decoration: none;
-}
-
-body.dark-mode .social-media a {
-    color: #66b2ff; /* Dark mode accent */
 }
 
 .social-media a i {
@@ -277,14 +224,10 @@ form {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    background: #ffffff; /* Light mode form background */
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode form {
-    background: #282828; /* Dark mode form background */
 }
 
 form label {
@@ -309,7 +252,7 @@ form textarea {
 }
 
 form button {
-    background-color: #1a73e8; /* Light mode button */
+    background-color: #0366d6;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -320,17 +263,10 @@ form button {
 }
 
 form button:hover {
-    background-color: #155ab3; /* Light mode button hover */
+    background-color: #024f94;
 }
 
-body.dark-mode form button {
-    background-color: #1e88e5; /* Dark mode button */
-}
-
-body.dark-mode form button:hover {
-    background-color: #1565c0; /* Dark mode button hover */
-}
-
+/* Add media queries for responsiveness */
 @media (max-width: 768px) {
     .contact {
         padding: 20px;
@@ -340,7 +276,6 @@ body.dark-mode form button:hover {
     }
 }
 
-/* Footer styles */
 footer {
     background-color: #333;
     color: white;
@@ -349,11 +284,6 @@ footer {
     position: relative;
 }
 
-body.dark-mode footer {
-    background-color: #1a1a1a;
-}
-
-/* Button styles */
 button {
     background-color: #444;
     color: white;
@@ -365,6 +295,33 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode nav {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode nav a {
+    color: white;
+}
+
+body.dark-mode nav a:hover {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
 }
 
 body.dark-mode button {
