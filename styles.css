@@ -295,7 +295,7 @@ button:hover {
 }
 
 /* Dark mode styles */
-body.dark-mode {
+/*body.dark-mode {
     background-color: var(--dark-bg-color);
     color: var(--light-bg-color);
 }
