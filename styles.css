@@ -9,8 +9,8 @@ body {
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #181818; /* Dark mode primary background */
-    color: #e0e0e0; /* Dark mode primary text */
+    background-color: #333333; /* Dark mode primary background */
+    color: #f7f7f7; /* Dark mode primary text */
 }
 
 /* Header styles */
