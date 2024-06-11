@@ -118,16 +118,16 @@ main {
 #about-me {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     text-align: left;
     padding: 40px;
     background-color: var(--light-bg-color);
 }
 
 #about-me h2 {
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .profile-pic {
