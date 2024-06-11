@@ -1,32 +1,60 @@
 // Replace 'your-github-username' with your actual GitHub username
 const githubUsername = 'tahaalikhan123';
 
-// Function to fetch repositories
+/**
+ * Fetch repositories from GitHub
+ * @returns {Promise<Object[]>} - A promise that resolves to a list of repositories
+ */
 async function fetchRepositories() {
-    const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
-    const repos = await response.json();
-    return repos;
+    try {
+        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to fetch repositories:', error);
+        return [];
+    }
 }
 
-// Function to display repositories
-async function displayRepositories() {
-    const repos = await fetchRepositories();
-    const repoContainer = document.getElementById('github-repositories');
-    repoContainer.innerHTML = '';
+/**
+ * Create a repository element for display
+ * @param {Object} repo - The repository object
+ * @returns {HTMLElement} - The created repository element
+ */
+function createRepoElement(repo) {
+    const repoElement = document.createElement('div');
+    repoElement.classList.add('repo');
+    
+    const repoHTML = `
+        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+        <p>${repo.description || 'No description available.'}</p>
+        <p>⭐ ${repo.stargazers_count} | Forks: ${repo.forks_count}</p>
+    `;
+    repoElement.innerHTML = repoHTML;
+    return repoElement;
+}
 
+/**
+ * Display repositories in the DOM
+ */
+async function displayRepositories() {
+    const repoContainer = document.getElementById('github-repositories');
+    repoContainer.innerHTML = '<p>Loading...</p>';
+    
+    const repos = await fetchRepositories();
+    repoContainer.innerHTML = '';
+    
     repos.forEach(repo => {
-        const repoElement = document.createElement('div');
-        repoElement.classList.add('repo');
-        repoElement.innerHTML = `
-            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-            <p>${repo.description || 'No description available.'}</p>
-            <p>⭐ ${repo.stargazers_count} | Forks: ${repo.forks_count}</p>
-        `;
+        const repoElement = createRepoElement(repo);
         repoContainer.appendChild(repoElement);
     });
 }
 
-// Function to display contributions graph
+/**
+ * Display GitHub contributions graph
+ */
 function displayContributions() {
     const contributionsContainer = document.getElementById('github-contributions');
     contributionsContainer.innerHTML = `
@@ -34,12 +62,15 @@ function displayContributions() {
     `;
 }
 
-// Initialize functions
+// Initialize functions when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     displayContributions();
     displayRepositories();
 });
 
-document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+/**
+ * Toggle dark mode for the page
+ */
+document.getElementById('toggle-dark-mode').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
