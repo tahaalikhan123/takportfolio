@@ -1,15 +1,11 @@
-/* CSS Variables for common values */
+/* CSS Variables for common values in monochrome */
 :root {
-    --primary-color: #0366d6;
-    --secondary-color: #444;
-    --light-bg-color: #f0f8ff;
-    --dark-bg-color: #121212;
-    --gold-color: gold;
-    --light-yellow: #fafad2;
-    --white-color: white;
-    --black-color: black;
-    --grey-color: #333;
-    --light-grey-color: #ddd;
+    --primary-color: black;
+    --secondary-color: grey;
+    --light-bg-color: white;
+    --dark-bg-color: black;
+    --border-color: #cccccc;
+    --hover-color: #444444;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
     --line-height: 1.6;
@@ -34,8 +30,8 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--black-color);
-    color: var(--white-color);
+    background-color: var(--primary-color);
+    color: var(--light-bg-color);
     z-index: 1000;
     box-shadow: var(--box-shadow);
 }
@@ -49,15 +45,15 @@ nav {
 }
 
 nav a {
-    color: var(--white-color);
+    color: var(--light-bg-color);
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    background-color: var(--gold-color);
-    color: var(--black-color);
+    background-color: var(--hover-color);
+    color: var(--light-bg-color);
 }
 
 main {
@@ -83,7 +79,7 @@ main {
 #github-contributions img {
     max-width: 100%;
     height: auto;
-    border: 1px solid var(--light-grey-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     object-fit: cover;
 }
@@ -95,8 +91,8 @@ main {
 }
 
 .repo {
-    background-color: var(--white-color);
-    border: 1px solid var(--light-grey-color);
+    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 20px;
     width: calc(50% - 20px); /* Adjust width for responsiveness */
@@ -125,7 +121,7 @@ main {
     align-items: center;
     text-align: left;
     padding: 40px;
-    background-color: var(--light-yellow);
+    background-color: var(--light-bg-color);
 }
 
 #about-me h2 {
@@ -225,7 +221,7 @@ main {
 }
 
 .social-media a:hover {
-    color: #ff4500; /* Change color on hover */
+    color: var(--hover-color); /* Change color on hover */
 }
 
 form {
@@ -233,7 +229,7 @@ form {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    background: var(--white-color);
+    background: var(--light-bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -251,7 +247,7 @@ form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid var(--light-grey-color);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1em;
 }
@@ -262,7 +258,7 @@ form textarea {
 
 form button {
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--light-bg-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -272,12 +268,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #024f94;
+    background-color: var(--hover-color);
 }
 
 footer {
-    background-color: var(--grey-color);
-    color: var(--white-color);
+    background-color: var(--secondary-color);
+    color: var(--light-bg-color);
     text-align: center;
     padding: 20px;
     display: flex;
@@ -286,8 +282,8 @@ footer {
 }
 
 button {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
+    background-color: var(--primary-color);
+    color: var(--light-bg-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -295,42 +291,42 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: var(--hover-color);
 }
 
 /* Dark mode styles */
 body.dark-mode {
     background-color: var(--dark-bg-color);
-    color: var(--white-color);
+    color: var(--light-bg-color);
 }
 
 body.dark-mode nav {
-    background-color: var(--grey-color);
+    background-color: var(--primary-color);
 }
 
 body.dark-mode nav a {
-    color: var(--white-color);
+    color: var(--light-bg-color);
 }
 
 body.dark-mode nav a:hover {
-    background-color: #555;
-    color: var(--white-color);
+    background-color: var(--hover-color);
+    color: var(--light-bg-color);
 }
 
 body.dark-mode .container {
-    background-color: var(--grey-color);
+    background-color: var(--dark-bg-color);
 }
 
 body.dark-mode footer {
-    background-color: var(--grey-color);
+    background-color: var(--primary-color);
 }
 
 body.dark-mode button {
-    background-color: #666;
+    background-color: var(--secondary-color);
 }
 
 body.dark-mode button:hover {
-    background-color: #777;
+    background-color: #555555;
 }
 
 /* Responsive design */
