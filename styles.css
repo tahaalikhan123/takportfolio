@@ -1,282 +1,383 @@
-/* Basic Reset */
-* {
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f7f7f7; /* Light mode primary background */
+    color: #333333; /* Light mode primary text */
 }
 
-/* Root variables for the color palette */
-:root {
-    --background: #000000; /* Black */
-    --text: #ffffff; /* White */
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #181818; /* Dark mode primary background */
+    color: #e0e0e0; /* Dark mode primary text */
 }
 
-/* Body Styling */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
-    padding: 0 20px;
-}
-
-/* Navigation Styling */
-nav {
-    background: var(--background);
-    color: var(--text);
-    padding: 15px 0;
+/* Header styles */
+header {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
+    background-color: #333; /* Light mode header background */
+    color: white;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-    list-style: none;
-    text-align: center;
+body.dark-mode header {
+    background-color: #1a1a1a; /* Dark mode header background */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
 }
 
-nav ul li a {
-    color: var(--text);
+nav a {
+    color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    transition: background 0.3s ease;
-}
-
-nav ul li a:hover {
-    background: #555555; /* Slightly lighter black for hover */
-    border-radius: 5px;
-}
-
-/* Hero Section */
-.hero {
-    background: var(--background);
-    color: var(--text);
-    padding: 100px 20px;
-    text-align: left;
-    margin-top: 60px;
-}
-
-.hero h1 {
-    margin-bottom: 20px;
-    font-size: 2.5em;
-}
-
-.hero p {
-    margin-bottom: 10px;
-    font-size: 1.25em;
-    line-height: 1.6;
-}
-
-/* Section Styling */
-section {
-    padding: 60px 20px;
-    margin-top: 40px;
-    background-color: var(--background);
-    color: var(--text);
-}
-
-section h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 700;
-    color: var(--text);
-}
-
-/* Projects Styling */
-.project {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #222222; /* Darker shade for project background */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-.project h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.25em;
-    color: var(--text);
-}
-
-.project p {
-    margin-bottom: 10px;
-    font-size: 1em;
-    color: var(--text);
-}
-
-.project a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.project a:hover {
-    color: #aaaaaa; /* Slightly lighter white for hover */
-}
-
-/* About Me Section */
-#about {
-    background: #111111; /* Slightly lighter black */
-    color: var(--text);
-    padding: 60px 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-#about img {
-    border-radius: 50%;
-    margin-bottom: 20px;
-    max-width: 150px;
-    height: auto;
-    border: 2px solid var(--text); /* White border */
-}
-
-#about .bio {
-    text-align: left;
-    margin-top: 20px;
-}
-
-#about .bio h3 {
-    margin-top: 20px;
-    color: var(--text);
-}
-
-#about .bio p {
-    margin-bottom: 10px;
-    color: var(--text);
-}
-
-#about .button {
-    display: inline-block;
-    margin-top: 20px;
     padding: 10px 20px;
-    background: #444444; /* Darker gray for buttons */
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#about .button:hover {
-    background: #666666; /* Lighter gray for hover */
+nav a:hover {
+    background-color: #0066cc; /* Light mode accent */
+    color: white;
 }
 
-/* Contact Me Section */
-.contact {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    background: var(--background);
-    color: var(--text);
+body.dark-mode nav a:hover {
+    background-color: #66b2ff; /* Dark mode accent */
 }
 
-.contact h2 {
+/* Main content styles */
+main {
+    margin-top: 60px; /* Offset for fixed header */
+}
+
+/* Container styles */
+.container {
+    padding: 60px 20px;
+    min-height: 20vh;
+    background-color: #ffffff; /* Light mode secondary background */
+}
+
+body.dark-mode .container {
+    background-color: #282828; /* Dark mode secondary background */
+}
+
+/* Section specific styles */
+#home {
+    background-color: #fdfdfde3;
+}
+
+/* Projects section styling */
+#github-contributions {
     margin-bottom: 20px;
-    color: var(--text);
+    text-align: left;
 }
 
-.contact a {
-    color: var(--text);
+#github-contributions img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #080808;
+    border-radius: 10px;
+}
+
+#github-repositories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.repo {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(50% - 20px); /* Adjust width for responsiveness */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.repo:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+}
+
+.repo h3 a {
     text-decoration: none;
+    color: #0066cc; /* Light mode accent */
 }
 
-.contact .social-media a {
-    display: inline-block;
-    margin: 10px;
-    color: var(--text);
+body.dark-mode .repo h3 a {
+    color: #66b2ff; /* Dark mode accent */
 }
 
-.contact form {
+.repo p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .repo {
+        width: 100%;
+    }
+}
+
+/* About Me section styling */
+#about-me {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: left;
+    padding: 40px;
+    background-color: #fafad2; /* Light yellow background */
 }
 
-.contact form label {
-    margin: 10px 0 5px 0;
-    color: var(--text);
+body.dark-mode #about-me {
+    background-color: #282828; /* Dark mode secondary background */
 }
 
-.contact form input, .contact form textarea {
+#about-me h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-pic {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.bio {
+    max-width: 800px;
+}
+
+.bio p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.bio h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333; /* Light mode text color */
+}
+
+body.dark-mode .bio h3 {
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+.skills ul, .education ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills > li, .education > li {
+    margin-bottom: 20px;
+}
+
+.skills h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #444; /* Light mode text color */
+}
+
+body.dark-mode .skills h4 {
+    color: #bdbdbd; /* Dark mode text color */
+}
+
+.skills ul ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.skills ul ul li, .education ul li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    #about-me {
+        padding: 20px;
+    }
+    .bio {
+        padding: 0 10px;
+    }
+    .profile-pic {
+        max-width: 150px;
+    }
+}
+
+/* Contact Me section styling */
+.contact {
+    padding: 40px;
+    background-color: #f0f8ff; /* Light blue background */
+    text-align: center;
+}
+
+body.dark-mode .contact {
+    background-color: #282828; /* Dark mode secondary background */
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #0066cc; /* Light mode accent */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body.dark-mode .contact a {
+    color: #66b2ff; /* Dark mode accent */
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin: 20px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    display: inline-block;
+    color: #0066cc; /* Light mode accent */
+    text-decoration: none;
+}
+
+body.dark-mode .social-media a {
+    color: #66b2ff; /* Dark mode accent */
+}
+
+.social-media a i {
+    margin-right: 8px;
+}
+
+.social-media a:hover {
+    color: #ff4500; /* Change color on hover */
+}
+
+form {
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff; /* Light mode form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode form {
+    background: #282828; /* Dark mode form background */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #555555;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background: var(--background);
-    color: var(--text);
+    font-size: 1em;
 }
 
-.contact form button {
+form textarea {
+    height: 100px;
+}
+
+form button {
+    background-color: #1a73e8; /* Light mode button */
+    color: white;
     padding: 10px 20px;
-    background-color: #333333; /* Darker shade for button background */
-    color: var(--text);
     border: none;
     border-radius: 5px;
+    font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background: var(--background);
-    color: var(--text);
-    margin-top: 20px;
+form button:hover {
+    background-color: #155ab3; /* Light mode button hover */
 }
 
-/* Animations */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+body.dark-mode form button {
+    background-color: #1e88e5; /* Dark mode button */
 }
 
-/* Responsive Design */
+body.dark-mode form button:hover {
+    background-color: #1565c0; /* Dark mode button hover */
+}
+
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    .contact {
+        padding: 20px;
     }
-
-    .hero {
-        padding: 50px 20px;
-    }
-
-    section {
-        padding: 40px 20px;
+    form {
+        padding: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2em;
-    }
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
 
-    .hero p {
-        font-size: 1em;
-    }
+body.dark-mode footer {
+    background-color: #1a1a1a;
+}
 
-    section h2 {
-        font-size: 1.5em;
+/* Button styles */
+button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+body.dark-mode button {
+    background-color: #666;
+}
+
+body.dark-mode button:hover {
+    background-color: #777;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
     }
 }

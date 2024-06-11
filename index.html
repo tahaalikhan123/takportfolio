@@ -3,119 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Taha Ali Khan</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Home Section -->
-    <header id="home">
-        <div class="hero">
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#about-me">About Me</a>
+            <a href="#contact-me">Contact Me</a>
+            <a href="resume.pdf" target="_blank">Download/View Resume</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="container">
             <h1>Welcome to My Portfolio</h1>
             <p>I am Taha Ali Khan, a highly skilled and dedicated Data Analyst with a solid foundation in Information Technology. My academic journey began with an honors degree in IT, where I developed a deep understanding of the core principles of technology and data management. Building on this foundation, I pursued a postgraduate diploma, graduating cum laude, which further enhanced my analytical capabilities and deepened my expertise in data analysis.</p>
             <p>Throughout my career, I have acquired extensive hands-on experience with a wide range of data analysis tools and technologies. My proficiency includes, but is not limited to, advanced Excel, SQL, Python, R, Tableau, and Power BI. These tools have been instrumental in my ability to perform data cleaning, manipulation, visualization, and statistical analysis. My technical skills are complemented by a strong understanding of data warehousing, data mining, and ETL processes.</p>
             <p>My role as a Data Analyst has seen me work on diverse projects across various industries, allowing me to develop a versatile skill set. I excel in identifying trends, uncovering patterns, and deriving actionable insights from complex datasets. My analytical acumen enables me to support strategic decision-making processes, optimize business operations, and contribute to achieving organizational goals.</p>
             <p>In addition to my technical and analytical skills, I am known for my meticulous attention to detail and my ability to communicate complex data findings to non-technical stakeholders. This ability ensures that insights are not only derived but also effectively utilized to drive business success. I thrive in collaborative environments and enjoy working with cross-functional teams to solve challenging problems and deliver impactful solutions.</p>
             <p>With a passion for data and a continuous drive for excellence, I am eager to take on new challenges and contribute to projects that push the boundaries of what data analysis can achieve. My goal is to leverage my skills and experience to make meaningful contributions to the field of data analytics and to help organizations unlock the full potential of their data.</p>
-        </div>
-    </header>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <!-- Projects will be dynamically inserted here -->
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <img src="taha.jpeg" alt="Taha Ali Khan">
-        <div class="bio">
-            <p>Detail-focused Data Analyst with knowledge in data warehousing, process validation, and business needs analysis. Proven to understand customer requirements and translate into actionable project plans. Dedicated and hard-working with passion for big data.</p>
-            <h3>Skills and Expertise</h3>
-            <ul>
-                <li><h4>Programming Languages</h4>
-                    <ul>
-                        <li>Python: For data manipulation, analysis, and visualization (using libraries like Pandas, NumPy, Matplotlib, and Seaborn).</li>
-                        <li>R: For statistical analysis and data visualization.</li>
-                        <li>SQL: For querying databases to extract, manipulate, and analyze data.</li>
-                    </ul>
-                </li>
-                <li><h4>Data Visualization Tools</h4>
-                    <ul>
-                        <li>Tableau: For creating interactive and shareable dashboards.</li>
-                        <li>Power BI: For business analytics and data visualization.</li>
-                        <li>Matplotlib/Seaborn (Python): For creating static, animated, and interactive visualizations.</li>
-                    </ul>
-                </li>
-                <li><h4>Statistical Analysis</h4>
-                    <ul>
-                        <li>Descriptive Statistics: Understanding measures of central tendency (mean, median, mode) and measures of variability (standard deviation, variance).</li>
-                        <li>Inferential Statistics: Hypothesis testing, confidence intervals, regression analysis.</li>
-                    </ul>
-                </li>
-                <li><h4>Data Manipulation and Cleaning</h4>
-                    <ul>
-                        <li>Pandas (Python): For data manipulation and analysis.</li>
-                        <li>Excel: For data organization, basic analysis, and pivot tables.</li>
-                    </ul>
-                </li>
-                <li><h4>Database Management</h4>
-                    <ul>
-                        <li>SQL Databases: Understanding relational database management systems (RDBMS) like MySQL, PostgreSQL, and Microsoft SQL Server.</li>
-                        <li>NoSQL Databases: Basic knowledge of NoSQL databases like MongoDB.</li>
-                    </ul>
-                </li>
-            </ul>
-            <h3>Education and Certifications</h3>
-            <ul>
-                <li>PG diploma Cum Laude Business Information Technology (Seneca Polytechnic Ontario, CA)</li>
-                <li>BSC honors Information Technology (Middlesex University Dubai, UAE)</li>
-            </ul>
-        </div>
-        <a href="resume.pdf" class="button" download>Download Resume</a>
-    </section>
-
-    <!-- Contact Me Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a></p>
-        <p>Phone: <a href="tel:+971562010813">+971 56 2010 813</a></p>
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/tahaalikhan123" target="_blank">
-                <i class="fab fa-github"></i> GitHub</a>
-            <a href="https://stackoverflow.com/users/11316230/noobprogrammer" target="_blank">
-                <i class="fab fa-stack-overflow"></i> Stack Overflow</a>
-        </div>
-        <form id="contactForm" action="submit_form.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        </section>
+        
+        <section id="projects" class="container">
+            <h2>My Projects</h2>
+            <p>Here are my daily GitHub contributions and ongoing repositories:</p>
+            <div id="github-contributions"></div>
+            <div id="github-repositories"></div>
+        </section>
+        
+        <section id="about-me" class="container">
+            <h2>About Me</h2>
+            <img src="taha.jpeg" alt="Taha Ali Khan" class="profile-pic">
+            <div class="bio">
+                <p>Detail-focused Data Analyst with knowledge in data warehousing, process validation, and business needs analysis. Proven to understand customer requirements and translate them into actionable project plans. Dedicated and hard-working with a passion for big data.</p>
+                
+                <h3>Skills and Expertise</h3>
+                <ul class="skills">
+                    <li>
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python: For data manipulation, analysis, and visualization (using libraries like Pandas, NumPy, Matplotlib, and Seaborn).</li>
+                            <li>R: For statistical analysis and data visualization.</li>
+                            <li>SQL: For querying databases to extract, manipulate, and analyze data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Data Visualization Tools</h4>
+                        <ul>
+                            <li>Tableau: For creating interactive and shareable dashboards.</li>
+                            <li>Power BI: For business analytics and data visualization.</li>
+                            <li>Matplotlib/Seaborn (Python): For creating static, animated, and interactive visualizations.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Statistical Analysis</h4>
+                        <ul>
+                            <li>Descriptive Statistics: Understanding measures of central tendency (mean, median, mode) and measures of variability (standard deviation, variance).</li>
+                            <li>Inferential Statistics: Hypothesis testing, confidence intervals, regression analysis.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Data Manipulation and Cleaning</h4>
+                        <ul>
+                            <li>Pandas (Python): For data manipulation and analysis.</li>
+                            <li>Excel: For data organization, basic analysis, and pivot tables.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Database Management</h4>
+                        <ul>
+                            <li>SQL Databases: Understanding relational database management systems (RDBMS) like MySQL, PostgreSQL, and Microsoft SQL Server.</li>
+                            <li>NoSQL Databases: Basic knowledge of NoSQL databases like MongoDB.</li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                <h3>Education and Certifications</h3>
+                <ul class="education">
+                    <li>PG diploma Cum Laude in Business Information Technology (Seneca Polytechnic Ontario, CA)</li>
+                    <li>BSc Honors in Information Technology (Middlesex University Dubai, UAE)</li>
+                </ul>
+            </div>
+        </section>
+      
+        <section id="contact-me" class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a></p>
+            <p>Phone: <a href="tel:+971562010813">+971 56 2010 813</a></p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/tahaalikhan123" target="_blank">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a href="https://stackoverflow.com/users/11316230/noobprogrammer" target="_blank">
+                    <i class="fab fa-stack-overflow"></i> Stack Overflow</a>
+            </div>
+            <form id="contactForm" action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        
+    </main>
 
     <footer>
-        <p>&copy; 2024 Taha Ali Khan</p>
+        <button id="toggle-dark-mode">Toggle Dark/Light Mode</button>
     </footer>
-
-    <!-- JavaScript for animations -->
-    <script src="script.js"></script>
 </body>
 </html>
