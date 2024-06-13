@@ -43,6 +43,10 @@ nav {
     padding: 10px 0;
     flex-wrap: wrap;
 }
+nav a.logo img {
+    height: 40px;
+    margin-left: 20px;
+}
 
 nav a {
     color: var(--light-bg-color);
@@ -66,8 +70,55 @@ main {
     background-color: var(--light-bg-color);
 }
 
+.home-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.main-content {
+    flex: 2;
+    padding: var(--container-padding);
+    background-color: var(--light-bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
 #home {
     background-color: var(--light-bg-color);
+}
+
+.sliding-box {
+    flex: 1;
+    overflow: hidden;
+    background-color: var(--light-bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    height: 200px; /* Adjust height as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.slider {
+    display: flex;
+    animation: slide 30s infinite linear; /* Increase duration for smooth transition */
+    align-items: center;
+    white-space: nowrap; /* Ensure items don't wrap */
+}
+
+.slider img {
+    max-width: 100px;
+    margin: 0 10px;
+    height: auto;
+    display: inline-block; /* Ensure proper alignment */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% + 100px)); } /* Adjust for logo width */
 }
 
 /* Projects section styling */

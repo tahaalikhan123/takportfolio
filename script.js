@@ -82,6 +82,16 @@ function sendMail() {
     // Open the user's default mail client with the mailto link
     window.location.href = mailtoLink;
 }
+
+// JavaScript to pause the sliding on hover and resume on mouse out
+document.querySelector('.sliding-box').addEventListener('mouseover', function() {
+    document.querySelector('.slider').style.animationPlayState = 'paused';
+});
+
+document.querySelector('.sliding-box').addEventListener('mouseout', function() {
+    document.querySelector('.slider').style.animationPlayState = 'running';
+});
+
 /**
  * Toggle dark mode for the page
  */
