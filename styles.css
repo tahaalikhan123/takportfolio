@@ -36,16 +36,19 @@ header {
     box-shadow: var(--box-shadow);
 }
 
+nav a.logo img {
+    height: 40px; /* Adjust height as needed */
+    margin-left: 20px;
+    max-width: 100px; /* Restrict maximum width */
+    object-fit: contain; /* Ensure the logo scales properly */
+}
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 5px 0;
     flex-wrap: wrap;
-}
-nav a.logo img {
-    height: 40px;
-    margin-left: 20px;
 }
 
 nav a {
@@ -89,37 +92,46 @@ main {
     background-color: var(--light-bg-color);
 }
 
+/* Container for the sliding images */
 .sliding-box {
-    flex: 1;
-    overflow: hidden;
+    width: 100%; /* Ensure it takes up full width */
+    height: 200px; /* Set height to fit images */
+    overflow: hidden; /* Hide overflowing content */
     background-color: var(--light-bg-color);
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    height: 200px; /* Adjust height as necessary */
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    position: relative; /* Ensure relative positioning for inner elements */
     padding: 10px;
 }
 
+/* Slider that scrolls the images */
 .slider {
-    display: flex;
-    animation: slide 30s infinite linear; /* Increase duration for smooth transition */
+    display: flex; /* Display as flex for inline items */
+    animation: slide 30s infinite linear; /* Animate slide */
     align-items: center;
-    white-space: nowrap; /* Ensure items don't wrap */
+    white-space: nowrap; /* Prevent wrapping of images */
 }
 
 .slider img {
-    max-width: 100px;
-    margin: 0 10px;
-    height: auto;
-    display: inline-block; /* Ensure proper alignment */
+    max-width: 100px; /* Adjust to fit images properly */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Space between images */
+    display: inline-block;
 }
 
+/* Animation keyframes */
 @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% + 100px)); } /* Adjust for logo width */
+    0% {
+        transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+        transform: translateX(calc(-100% + 100px * 9)); /* Slide through all images */
+    }
 }
+
 
 /* Projects section styling */
 #github-contributions {
