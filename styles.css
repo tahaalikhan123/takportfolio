@@ -128,7 +128,7 @@ main {
         transform: translateX(0); /* Start at the beginning */
     }
     100% {
-        transform: translateX(calc(-100% + 100px * 9)); /* Slide through all images */
+        transform: translateX(calc(-100% + 100px * 11)); /* Slide through all images */
     }
 }
 
