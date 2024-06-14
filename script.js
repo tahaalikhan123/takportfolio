@@ -110,3 +110,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000); // Matches the duration of the opacity transition
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomePage = document.getElementById('welcome-page');
+    const enterButton = document.getElementById('enter-portfolio');
+
+    // Button click to unveil portfolio
+    enterButton.addEventListener('click', () => {
+        welcomePage.classList.add('fade-out');
+        setTimeout(() => {
+            welcomePage.style.display = 'none';
+        }, 1000); // Matches the duration of the opacity transition
+    });
+
+    // Scroll Animation
+    const sections = document.querySelectorAll('section');
+    const options = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px',
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('left')) {
+                    entry.target.classList.add('section-left-visible');
+                } else if (entry.target.classList.contains('right')) {
+                    entry.target.classList.add('section-right-visible');
+                } else {
+                    entry.target.classList.add('section-visible');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        if (section.classList.contains('left')) {
+            section.classList.add('section-left');
+        } else if (section.classList.contains('right')) {
+            section.classList.add('section-right');
+        } else {
+            section.classList.add('section-animate');
+        }
+        observer.observe(section);
+    });
+});
