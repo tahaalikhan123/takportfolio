@@ -423,9 +423,30 @@ body.dark-mode button:hover {
     }
 }
 
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Parallax Background */
+.parallax {
+    background-image: url('images/pexbg.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Existing styles */
 
 /* Welcome Page Styles */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 #welcome-page {
     position: fixed;
     top: 0;
@@ -446,7 +467,13 @@ body.dark-mode button:hover {
     padding: 20px;
     box-sizing: border-box;
 }
-
+/* Typography */
+#welcome-page h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 #welcome-page::before {
     content: '';
     position: absolute;
@@ -462,28 +489,28 @@ body.dark-mode button:hover {
     opacity: 0;
 }
 
+/* Button Animation */
 #welcome-page button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: var(--light-bg-color);
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 #welcome-page button:hover {
-    background-color: var(--hover-color);
-    color: var(--light-bg-color);
-    transform: scale(1.05);
+    background-color: #ff7e5f;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#welcome-page button:active {
-    transform: scale(0.95);
+/* Section Animation */
+.section-visible {
+    animation: fadeInUp 1s forwards, scaleUp 0.5s ease-out;
 }
+
+@keyframes scaleUp {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
 /* Scroll Animation Keyframes */
 @keyframes fadeInUp {
     from {
