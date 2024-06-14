@@ -43,7 +43,57 @@
     visibility: visible;
     opacity: 1;
 }
+/* Base styles */
+body {
+    --primary-color: #100e17;
+    --primary-bg-color: #fff;
+    --border-color: #ccc;
+    position: relative;
+    color: var(--primary-color);
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    --primary-color: #ff8a00;
+    --primary-bg-color: #100e17;
+    --border-color: #fff;
+  }
+  
+  .switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .switch-sun, .switch-moon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  body.dark-mode .switch-sun {
+    display: block;
+  }
+  
+  body.dark-mode .switch-moon {
+    display: none;
+  }
+  
+  /* Light mode */
+  .switch-sun {
+    display: none;
+  }
+  
+  body:not(.dark-mode) .switch-moon {
+    display: block;
+  }
+  
 
+  
 body {
     font-family: Arial, sans-serif;
     margin: 0;

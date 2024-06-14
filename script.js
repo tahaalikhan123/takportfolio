@@ -92,11 +92,23 @@ document.querySelector('.sliding-box').addEventListener('mouseout', function() {
     document.querySelector('.slider').style.animationPlayState = 'running';
 });
 
-/**
- * Toggle dark mode for the page
- */
-document.getElementById('toggle-dark-mode').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+// Select the switch button
+const switchButton = document.querySelector('.switch');
+
+// Toggle dark mode
+switchButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  // Optionally save the mode in local storage
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+});
+
+// Maintain dark mode state on page reload
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeState = localStorage.getItem('dark-mode');
+  if (darkModeState === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
