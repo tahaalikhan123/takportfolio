@@ -98,3 +98,15 @@ document.querySelector('.sliding-box').addEventListener('mouseout', function() {
 document.getElementById('toggle-dark-mode').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomePage = document.getElementById('welcome-page');
+    const enterButton = document.getElementById('enter-portfolio');
+
+    enterButton.addEventListener('click', () => {
+        welcomePage.classList.add('fade-out');
+        setTimeout(() => {
+            welcomePage.style.display = 'none';
+        }, 1000); // Matches the duration of the opacity transition
+    });
+});
