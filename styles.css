@@ -140,10 +140,6 @@ nav a:hover {
     color: var(--light-bg-color);
 }
 
-@media screen and (max-width: 600px) {
-    
-}
-
 main {
     margin-top: 10vh; /* Adjusted for better flexibility */
 }
