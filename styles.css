@@ -61,7 +61,7 @@ body {
   }
   
   .switch {
-    position: absolute;
+    position: fixed; /* Fixed to top right corner */
     top: 10px;
     right: 10px;
     display: flex;
@@ -435,41 +435,6 @@ button:hover {
     background-color: var(--hover-color);
 }
 
-/* Dark mode styles */
-/*body.dark-mode {
-    background-color: var(--dark-bg-color);
-    color: var(--light-bg-color);
-}
-
-body.dark-mode nav {
-    background-color: var(--primary-color);
-}
-
-body.dark-mode nav a {
-    color: var(--light-bg-color);
-}
-
-body.dark-mode nav a:hover {
-    background-color: var(--hover-color);
-    color: var(--light-bg-color);
-}
-
-body.dark-mode .container {
-    background-color: var(--dark-bg-color);
-}
-
-body.dark-mode footer {
-    background-color: var(--primary-color);
-}
-
-body.dark-mode button {
-    background-color: var(--secondary-color);
-}
-
-body.dark-mode button:hover {
-    background-color: #555555;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
     nav {
@@ -658,4 +623,4 @@ html {
     opacity: 1;
     transform: translateX(0);
     animation: fadeInRight 1s forwards;
-}
+}       
