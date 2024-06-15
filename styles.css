@@ -422,12 +422,22 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
 footer p {
     margin: 0;
 }
 
+button {
+    background-color: var(--primary-color);
+    color: var(--light-bg-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+button:hover {
+    background-color: var(--hover-color);
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
