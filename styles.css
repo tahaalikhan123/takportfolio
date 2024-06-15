@@ -414,7 +414,7 @@ form button:hover {
 }
 
 footer {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--light-bg-color);
     text-align: center;
     padding: 20px;
@@ -423,18 +423,11 @@ footer {
     align-items: center;
 }
 
-button {
-    background-color: var(--primary-color);
-    color: var(--light-bg-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+footer p {
+    margin: 0;
 }
 
-button:hover {
-    background-color: var(--hover-color);
-}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
