@@ -102,6 +102,7 @@ body:not(.dark-mode) {
     padding: 0;
     line-height: var(--line-height);
 }
+/* Base styles for the header and navs */
 header {
     position: fixed;
     width: 100%;
@@ -113,14 +114,14 @@ header {
     box-shadow: var(--box-shadow);
 }
 
-nav a.logo img {
+.desktop-nav a.logo img {
     height: 40px; /* Adjust height as needed */
     margin-left: 20px;
     max-width: 100px; /* Restrict maximum width */
     object-fit: contain; /* Ensure the logo scales properly */
 }
 
-nav {
+.desktop-nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,16 +129,60 @@ nav {
     flex-wrap: wrap;
 }
 
-nav a {
+.desktop-nav a {
     color: var(--light-bg-color);
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover {
+.desktop-nav a:hover {
     background-color: var(--hover-color);
     color: var(--light-bg-color);
+}
+
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-nav-toggle {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--light-bg-color);
+    cursor: pointer;
+}
+
+.mobile-nav-content {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 10px;
+}
+
+.mobile-nav-content a {
+    color: var(--light-bg-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.mobile-nav-content a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
 }
 
 main {

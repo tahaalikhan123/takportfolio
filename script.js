@@ -190,3 +190,13 @@ document.querySelector('.prev').addEventListener('click', () => {
 });
 
 showSlide(currentSlide);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.mobile-nav-toggle');
+        const mobileNavContent = document.querySelector('.mobile-nav-content');
+
+        toggleButton.addEventListener('click', function() {
+            mobileNavContent.style.display = 
+                mobileNavContent.style.display === 'flex' ? 'none' : 'flex';
+        });
+    });
