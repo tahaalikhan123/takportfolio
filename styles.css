@@ -627,4 +627,59 @@ html {
     opacity: 1;
     transform: translateX(0);
     animation: fadeInRight 1s forwards;
-}       
+}
+/* Mobile styles for Welcome Page */
+@media (max-width: 768px) {
+    #welcome-page h1 {
+        font-size: 1.5em;
+    }
+
+    #welcome-page button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2em;
+    }
+}
+
+/* Mobile styles for Projects Section */
+@media (max-width: 768px) {
+    #projects {
+        text-align: center;
+    }
+
+    #github-contributions img, #github-repositories .repo {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile styles for About Me Section */
+@media (max-width: 768px) {
+    #about-me img {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .bio {
+        padding: 10px;
+    }
+}
+
+/* Mobile styles for Contact Section */
+@media (max-width: 768px) {
+    #contact-me {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #contactForm input, #contactForm textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #contactForm button {
+        width: 100%;
+        padding: 10px;
+    }
+}
