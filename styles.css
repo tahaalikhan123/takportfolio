@@ -33,7 +33,7 @@
     position: absolute;
     z-index: 1;
     bottom: 125%; /* Position above the text */
-    left: 50%;
+    left: 50%;  
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -44,10 +44,10 @@
     opacity: 1;
 }
 /* Base styles */
-body {
+body:not(.dark-mode) {
     --primary-color: #100e17;
     --primary-bg-color: #fff;
-    --border-color: #ccc;
+    --border-color: #cccccc;
     position: relative;
     color: var(--primary-color);
     background-color: var(--primary-bg-color);
@@ -55,7 +55,7 @@ body {
   }
   
   body.dark-mode {
-    --primary-color: #ff8a00;
+    --primary-color: #1c61e2;
     --primary-bg-color: #100e17;
     --border-color: #fff;
   }
@@ -91,18 +91,17 @@ body {
   body:not(.dark-mode) .switch-moon {
     display: block;
   }
-  
-
-  
-body {
+    
+  body {
+    position: relative;
+    color: var(--primary-color);
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s, color 0.3s;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-bg-color);
-    color: var(--primary-color);
     line-height: var(--line-height);
 }
-
 header {
     position: fixed;
     width: 100%;
@@ -148,7 +147,7 @@ main {
 .container {
     padding: 60px 20px;
     min-height: 20vh;
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
 }
 
 .home-content {
@@ -161,13 +160,13 @@ main {
 .main-content {
     flex: 2;
     padding: var(--container-padding);
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 }
 
 #home {
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
 }
 
 /* Container for the sliding images */
@@ -175,7 +174,7 @@ main {
     width: 100%; /* Ensure it takes up full width */
     height: 200px; /* Set height to fit images */
     overflow: hidden; /* Hide overflowing content */
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,7 +231,7 @@ main {
 }
 
 .repo {
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 20px;
@@ -262,7 +261,7 @@ main {
     align-items: left;
     text-align: left;
     padding: 40px;
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
 }
 
 #about-me h2 {
@@ -321,7 +320,7 @@ main {
 /* Contact Me section styling */
 .contact {
     padding: 40px;
-    background-color: var(--light-bg-color);
+    background-color: var(--primary-bg-color);
     text-align: center;
 }
 
@@ -390,6 +389,8 @@ form textarea {
     margin-bottom: 15px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color); 
     font-size: 1em;
 }
 
