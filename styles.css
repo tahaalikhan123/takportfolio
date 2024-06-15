@@ -103,6 +103,7 @@ body:not(.dark-mode) {
     line-height: var(--line-height);
 }
 /* Base styles for the header and navs */
+/* Base styles for the header and navs */
 header {
     position: fixed;
     width: 100%;
@@ -154,10 +155,11 @@ header {
     border: none;
     color: var(--light-bg-color);
     cursor: pointer;
+    padding: 10px 20px;
 }
 
 .mobile-nav-content {
-    display: none;
+    display: none; /* Hidden by default */
     flex-direction: column;
     background-color: var(--primary-color);
     width: 100%;
@@ -167,11 +169,16 @@ header {
 .mobile-nav-content a {
     color: var(--light-bg-color);
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .mobile-nav-content a:hover {
     background-color: var(--hover-color);
+}
+
+/* Class to display the mobile nav content */
+.mobile-nav-content.show {
+    display: flex; /* Show when class is added */
 }
 
 /* Media query for mobile view */
