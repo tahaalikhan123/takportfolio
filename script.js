@@ -196,13 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNavContent = document.querySelector('.mobile-nav-content');
 
     if (toggleButton && mobileNavContent) {
-        console.log('Toggle button and mobile nav content found');
         toggleButton.addEventListener('click', function() {
-            console.log('Toggle button clicked');
             mobileNavContent.classList.toggle('show');
-            console.log('Nav content display state:', mobileNavContent.style.display);
         });
-    } else {
-        console.error('Toggle button or mobile nav content not found');
     }
 });

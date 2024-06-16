@@ -159,11 +159,11 @@ header {
 }
 
 .mobile-nav-content {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    background-color: var(--primary-color);
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50px; /* Adjust based on your header height */
     width: 100%;
-    padding: 10px;
+    background-color: #fff;
 }
 
 .mobile-nav-content a {
@@ -178,7 +178,7 @@ header {
 
 /* Class to display the mobile nav content */
 .mobile-nav-content.show {
-    display: flex; /* Show when class is added */
+    display: block; /* Show on toggle */
 }
 
 /* Media query for mobile view */
