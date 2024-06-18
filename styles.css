@@ -8,42 +8,25 @@
     --hover-color: #444444;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-    --line-height: 1.2;
+    --line-height: 1.5;
 }
-
+/*Basic body styling*/
+body {
+    position: left;
+    color: var(--primary-color);
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height);
+}
 /* Global box-sizing and reset */
 *, *::before, *::after {
     box-sizing: border-box;
 }
-/* Tooltip Styles */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Position above the text */
-    left: 50%;  
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-/* Base styles */
+/*Styles for dark and light mdode*/
 body:not(.dark-mode) {
     --primary-color: #100e17;
     --primary-bg-color: #fff;
@@ -92,17 +75,7 @@ body:not(.dark-mode) {
     display: block;
   }
     
-  body {
-    position: relative;
-    color: var(--primary-color);
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s, color 0.3s;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: var(--line-height);
-}
-/* Base styles for the header and navs */
+
 /* Base styles for the header and navs */
 header {
     position: fixed;
