@@ -115,17 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const welcomePage = document.getElementById('welcome-page');
     const enterButton = document.getElementById('enter-portfolio');
 
-    enterButton.addEventListener('click', () => {
-        welcomePage.classList.add('fade-out');
-        setTimeout(() => {
-            welcomePage.style.display = 'none';
-        }, 1000); // Matches the duration of the opacity transition
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const welcomePage = document.getElementById('welcome-page');
-    const enterButton = document.getElementById('enter-portfolio');
-
     // Button click to unveil portfolio
     enterButton.addEventListener('click', () => {
         welcomePage.classList.add('fade-out');
