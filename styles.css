@@ -133,13 +133,14 @@ header {
     position: absolute;
     top: 50px;
     right: 10px;
-    background: white;
+    background: black;
     border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .mobile-nav-content a {
+    display: flex;
     color: var(--light-bg-color);
     text-decoration: none;
     padding: 10px 20px;

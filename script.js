@@ -1,6 +1,8 @@
+/**
+ * Github repo projects
+ */
 // Replace 'your-github-username' with your actual GitHub username
 const githubUsername = 'tahaalikhan123';
-
 /**
  * Fetch repositories from GitHub
  * @returns {Promise<Object[]>} - A promise that resolves to a list of repositories
@@ -17,7 +19,6 @@ async function fetchRepositories() {
         return [];
     }
 }
-
 /**
  * Create a repository element for display
  * @param {Object} repo - The repository object
@@ -35,7 +36,6 @@ function createRepoElement(repo) {
     repoElement.innerHTML = repoHTML;
     return repoElement;
 }
-
 /**
  * Display repositories in the DOM
  */
@@ -51,7 +51,6 @@ async function displayRepositories() {
         repoContainer.appendChild(repoElement);
     });
 }
-
 /**
  * Display GitHub contributions graph
  */
@@ -61,13 +60,14 @@ function displayContributions() {
         <img src="https://ghchart.rshah.org/${githubUsername}" alt="GitHub Contributions Graph" />
     `;
 }
-
 // Initialize functions when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     displayContributions();
     displayRepositories();
 });
-
+/**
+ * Sending mail
+ */
 function sendMail() {
     // Get the form values
     var name = document.getElementById('name').value;
@@ -82,7 +82,6 @@ function sendMail() {
     // Open the user's default mail client with the mailto link
     window.location.href = mailtoLink;
 }
-
 // JavaScript to pause the sliding on hover and resume on mouse out
 document.querySelector('.sliding-box').addEventListener('mouseover', function() {
     document.querySelector('.slider').style.animationPlayState = 'paused';
@@ -91,10 +90,8 @@ document.querySelector('.sliding-box').addEventListener('mouseover', function() 
 document.querySelector('.sliding-box').addEventListener('mouseout', function() {
     document.querySelector('.slider').style.animationPlayState = 'running';
 });
-
 // Select the switch button
 const switchButton = document.querySelector('.switch');
-
 // Toggle dark mode
 switchButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
@@ -102,7 +99,6 @@ switchButton.addEventListener('click', () => {
   const isDarkMode = document.body.classList.contains('dark-mode');
   localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
 });
-
 // Maintain dark mode state on page reload
 document.addEventListener('DOMContentLoaded', () => {
   const darkModeState = localStorage.getItem('dark-mode');
@@ -112,20 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Welcome Page Logic
     const welcomePage = document.getElementById('welcome-page');
     const enterButton = document.getElementById('enter-portfolio');
 
-    // Button click to unveil portfolio
-    enterButton.addEventListener('click', () => {
-        welcomePage.classList.add('fade-out');
-        setTimeout(() => {
-            welcomePage.style.display = 'none';
-        }, 1000); // Matches the duration of the opacity transition
-    });
+    if (enterButton && welcomePage) {
+        enterButton.addEventListener('click', () => {
+            welcomePage.classList.add('fade-out');
+            setTimeout(() => {
+                welcomePage.style.display = 'none';
+            }, 1000); // Matches the duration of the opacity transition
+        });
+    }
 
     // Scroll Animation
     const sections = document.querySelectorAll('section');
-    const options = {
+    const observerOptions = {
         root: null,
         threshold: 0.1,
         rootMargin: '0px',
@@ -144,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, options);
+    }, observerOptions);
 
     sections.forEach(section => {
         if (section.classList.contains('left')) {
@@ -156,36 +154,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         observer.observe(section);
     });
-});
-const carousel = document.querySelector('.carousel');
-const slides = carousel.querySelectorAll('.slide');
-let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
-    });
-    currentSlide = index;
-}
+    // Carousel Logic
+    const carousel = document.querySelector('.carousel');
+    if (carousel) {
+        const slides = carousel.querySelectorAll('.slide');
+        let currentSlide = 0;
 
-document.querySelector('.next').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-});
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            currentSlide = index;
+        }
 
-document.querySelector('.prev').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-});
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
 
-showSlide(currentSlide);
+        if (nextButton && prevButton) {
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
 
-document.addEventListener('DOMContentLoaded', function() {
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+        }
+
+        showSlide(currentSlide);
+    }
+
+    // Mobile Navigation Toggle
     const toggleButton = document.querySelector('.mobile-nav-toggle');
     const mobileNavContent = document.querySelector('.mobile-nav-content');
 
     if (toggleButton && mobileNavContent) {
-        toggleButton.addEventListener('click', function() {
+        toggleButton.addEventListener('click', () => {
             mobileNavContent.classList.toggle('show');
         });
     }
