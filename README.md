@@ -38,7 +38,7 @@ To run this project locally, you will need a web browser (e.g., Chrome, Firefox)
 
     ```bash
     git clone https://github.com/tahaalikhan123/porto.git
-    cd portfolio-website
+    cd porto
     ```
 
 2. **Open the project in your code editor:**
