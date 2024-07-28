@@ -10,21 +10,21 @@
     
 </head>
 <body>
-        <!-- Welcome Page -->
-<div id="welcome-page">
-    <h1>Welcome to My Portfolio</h1>
-    <button id="enter-portfolio">Enter Portfolio</button>
-</div>
+    <div id="welcome-page">
+        <h1>Welcome to My Portfolio</h1>
+        <p class="tagline">Transforming data into actionable insights</p>
+        <button id="enter-portfolio">Enter Portfolio</button>
+    </div>    
 
 
 <header>
     <nav class="desktop-nav">
-        <a href="#home" class="logo"><img src="images/logo.png" alt="Logo"></a>
-        <a href="#projects" class="logo"><img src="images/projects.png" alt="Logo"></a>
-        <a href="#about-me" class="logo"><img src="images/about.png" alt="Logo"></a>
-        <a href="#contact-me" class="logo"><img src="images/contact.png" alt="Logo"></a>
-        <a href="resume.pdf" target="_blank" class="logo"><img src="images/resume.png" alt="Logo"></a>
-    </nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about-me" class="nav-link">About Me</a>
+        <a href="#contact-me" class="nav-link">Contact</a>
+        <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
+    </nav>    
     <div class="mobile-nav">
         <button class="mobile-nav-toggle">☰</button>
         <div class="mobile-nav-content">
@@ -47,10 +47,13 @@
             <div class="home-content">
                 <div class="main-content">
             <h1>Welcome to My Portfolio</h1>
-            <p>I am Taha Ali Khan,skilled and dedicated Data Analyst with a solid foundation in Information Technology. My academic journey began with an honors degree in IT, where I developed a deep understanding of the core principles of technology and data management. Building on this foundation further enhanced my analytical capabilities and deepened my expertise in data analysis.
-            Throughout my career, I have acquired extensive hands-on experience with a wide range of data analysis tools and technologies. My proficiency includes, but is not limited to, advanced Excel, SQL, Python, R, Tableau, and Power BI. These tools have been instrumental in my ability to perform data cleaning, manipulation, visualization, and statistical analysis. My technical skills are complemented by a strong understanding of data warehousing, data mining, and ETL processes.
-            In addition to my technical and analytical skills, I am known for my meticulous attention to detail and my ability to communicate complex data findings to non-technical stakeholders. This ability ensures that insights are not only derived but also effectively utilized to drive business success. I thrive in collaborative environments and enjoy working with cross-functional teams to solve challenging problems and deliver impactful solutions.
-            With a passion for data and a continuous drive for excellence, I am eager to take on new challenges and contribute to projects that push the boundaries of what data analysis can achieve. My goal is to leverage my skills and experience to make meaningful contributions to the field of data analytics and to help organizations unlock the full potential of their data.</p>
+            <p>I am Taha Ali Khan,skilled and dedicated Data Analyst with a solid foundation in Information Technology.</p>
+            <ul class="key-skills">
+                <li>Advanced knowledge in data analysis tools like Excel, SQL, Python, R, Tableau, and Power BI.</li>
+                <li>Proficient in data cleaning, manipulation, visualization, and statistical analysis.</li>
+                <li>Experienced in data warehousing, data mining, and ETL processes.</li>
+                <li>Strong ability to communicate complex data findings to non-technical stakeholders.</li>
+            </ul>
             </div>
             <div class="sliding-box">
                 <div class="slider">
@@ -80,10 +83,8 @@
         
         <section id="about-me" class="container right">
             <h2>About Me</h2>
-            <img src="images/taha.jpeg" alt="Taha Ali Khan" class="profile-pic">
             <div class="bio">
                 <p>Detail-focused Data Analyst with knowledge in data warehousing, process validation, and business needs analysis. Proven to understand customer requirements and translate them into actionable project plans. Dedicated and hard-working with a passion for big data.</p>
-                
                 <h3>Skills and Expertise</h3>
                 <ul class="skills">
                     <li>
@@ -126,10 +127,14 @@
                 </ul>
         
                 <h3>Education and Certifications</h3>
-                <ul class="education">
-                    <li>PG diploma Cum Laude in Business Information Technology (Seneca Polytechnic Ontario, CA)</li>
-                    <li>BSc Honors in Information Technology (Middlesex University Dubai, UAE)</li>
-                </ul>
+                <div class="timeline">
+                    <div class="timeline-event">
+                        <h4>PG diploma Cum Laude in Business Information Technology</h4>
+                        <p>Seneca Polytechnic Ontario, CA</p>
+                    </div>
+                    <div class="timeline-event">
+                        <h4>BSc Honors in Information Technology</h4>
+                        <p>Middlesex University Dubai, UAE</p>
             </div>
         </section>
       
@@ -145,24 +150,17 @@
                 <a href="https://stackoverflow.com/users/11316230/noobprogrammer" target="_blank">
                     <i class="fab fa-stack-overflow"></i> Stack Overflow</a>
             </div>
-            <form id="contactForm" onsubmit="sendMail(); return false;">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-    
-                <button type="submit">Send</button>
-            </form>
-        </section>
+        </section>        
         
     </main>
 
     <footer>
         <p>&copy; 2024 Taha Ali Khan</p>
-    </footer>    
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/tahaalikhan123" target="_blank">GitHub</a>
+            <a href="https://stackoverflow.com/users/11316230/noobprogrammer" target="_blank">Stack Overflow</a>
+        </div>
+    </footer>        
 </body>
 </html>

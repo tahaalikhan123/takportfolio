@@ -186,6 +186,12 @@ main {
     background-color: var(--primary-bg-color);
 }
 
+.key-skills {
+    list-style: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
 .home-content {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -329,6 +335,18 @@ main {
     color: var(--secondary-color);
 }
 
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.timeline-event {
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 3px solid #007bff;
+}
+
 .skills ul, .education ul {
     list-style-type: none;
     padding: 0;
@@ -398,55 +416,6 @@ main {
 
 .social-media a:hover {
     color: var(--hover-color); /* Change color on hover */
-}
-
-form {
-    margin-top: 20px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    background: var(--light-bg-color);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--primary-bg-color);
-    color: var(--primary-color); 
-    font-size: 1em;
-}
-
-form textarea {
-    height: 100px;
-}
-
-form button {
-    background-color: var(--primary-color);
-    color: var(--light-bg-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: var(--hover-color);
 }
 
 footer {
@@ -524,6 +493,11 @@ html {
 /* Existing styles */
 
 /* Welcome Page Styles */
+#welcome-page .tagline {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #000000;
+}
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }

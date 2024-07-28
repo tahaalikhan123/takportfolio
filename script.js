@@ -65,23 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     displayContributions();
     displayRepositories();
 });
-/**
- * Sending mail
- */
-function sendMail() {
-    // Get the form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-
-    // Create the mailto link
-    var subject = encodeURIComponent('Contact Form Submission');
-    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-    var mailtoLink = 'mailto:recipient@example.com?subject=' + subject + '&body=' + body;
-
-    // Open the user's default mail client with the mailto link
-    window.location.href = mailtoLink;
-}
 // JavaScript to pause the sliding on hover and resume on mouse out
 document.querySelector('.sliding-box').addEventListener('mouseover', function() {
     document.querySelector('.slider').style.animationPlayState = 'paused';
