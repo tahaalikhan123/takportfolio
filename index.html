@@ -20,7 +20,7 @@
 <header>
     <nav class="desktop-nav">
         <a href="#home" class="nav-link">Home</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#my-github" class="nav-link">My GitHub</a>
         <a href="#about-me" class="nav-link">About Me</a>
         <a href="#contact-me" class="nav-link">Contact</a>
         <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
@@ -29,7 +29,7 @@
         <button class="mobile-nav-toggle">☰</button>
         <div class="mobile-nav-content">
             <a href="#home" class="nav-link">Home</a>
-            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#my-github" class="nav-link">My GitHub</a>
             <a href="#about-me" class="nav-link">About Me</a>
             <a href="#contact-me" class="nav-link">Contact</a>
             <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
@@ -73,13 +73,45 @@
             </div>
         </div>
         </section>
+        <section id="my-work" class="container left">
+            <h2>My Work</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/work1.jpg" style="width:100%">
+                    <div class="text"><a href="https://link-to-work1.com" target="_blank">Project 1</a></div>
+                </div>
         
-        <section id="projects" class="container left">
-            <h2>My Projects</h2>
+                <div class="mySlides fade">
+                    <img src="images/work2.jpg" style="width:100%">
+                    <div class="text"><a href="https://link-to-work2.com" target="_blank">Project 2</a></div>
+                </div>
+        
+                <div class="mySlides fade">
+                    <img src="images/work3.jpg" style="width:100%">
+                    <div class="text"><a href="https://link-to-work3.com" target="_blank">Project 3</a></div>
+                </div>
+        
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+        
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        
+        <section id="my-github" class="container left">
+            <h2>My Github</h2>
             <p>Here are my daily GitHub contributions and ongoing repositories:</p>
             <div id="github-contributions"></div>
             <div id="github-repositories"></div>
         </section>
+        
         
         <section id="about-me" class="container right">
             <h2>About Me</h2>
