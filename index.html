@@ -15,8 +15,6 @@
         <p class="tagline">Transforming data into actionable insights</p>
         <button id="enter-portfolio">Enter Portfolio</button>
     </div>    
-
-
 <header>
     <nav class="desktop-nav">
         <a href="#home" class="nav-link">Home</a>
@@ -41,7 +39,6 @@
         <img src="https://s.svgbox.net/hero-outline.svg?ic=moon&fill=f6ad55" class="switch-moon" width="50" height="50">
     </div>
 </header>
-
     <main>
         <section id="home" class="container section-animate">
             <div class="home-content">
@@ -75,23 +72,23 @@
         </section>
         <section id="my-work" class="container left">
             <h2>My Work</h2>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="images/work1.jpg" style="width:100%">
-                    <div class="text"><a href="https://link-to-work1.com" target="_blank">Project 1</a></div>
-                </div>
-        
-                <div class="mySlides fade">
-                    <img src="images/work2.jpg" style="width:100%">
-                    <div class="text"><a href="https://link-to-work2.com" target="_blank">Project 2</a></div>
-                </div>
-        
-                <div class="mySlides fade">
-                    <img src="images/work3.jpg" style="width:100%">
-                    <div class="text"><a href="https://link-to-work3.com" target="_blank">Project 3</a></div>
-                </div>
-        
-                <!-- Next and previous buttons -->
+             <!-- PDF Embed -->
+             <div class="mySlides fade">
+                <iframe src="pdf/RFM_Dashboard.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+                <div class="text"><a href="pdf/RFM_Dashboard.pdf" target="_blank">View PDF</a></div>
+            </div>
+            
+            <div class="mySlides fade">
+                <iframe src="pdf/CLV Prototype Dashboard.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+                <div class="text"><a href="pdf/CLV Prototype Dashboard.pdf" target="_blank">View PDF</a></div>
+            </div>
+
+            <!-- Jupyter Notebook Embed -->
+            <div class="mySlides fade">
+                <iframe src="https://nbviewer.org/github/tahaalikhan123/customersegmentation/blob/main/insightfulcustomersegm.ipynb" style="width:100%; height:600px;" frameborder="0"></iframe>
+                <div class="text"><a href="https://nbviewer.org/github/tahaalikhan123/customersegmentation/blob/main/insightfulcustomersegm.ipynb" target="_blank">View Notebook</a></div>
+            </div>
+            <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
