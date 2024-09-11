@@ -228,6 +228,7 @@ function animateStars() {
     const stars = document.querySelectorAll('.stars');
     stars.forEach(star => {
         const rating = star.getAttribute('data-rating');
-        star.querySelector('::before').style.width = `${rating}em`;
+        star.style.setProperty('--star-width', `${rating}em`); // Ensure inline styling
+        star.querySelector('::before').style.width = `${rating}em`;  // Use the correct CSS property
     });
 }
