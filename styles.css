@@ -323,7 +323,8 @@ main {
 }
 
 .bio p {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
@@ -356,7 +357,8 @@ main {
 }
 
 .skills h4 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    line-height: 1.6;
     margin-bottom: 10px;
     color: var(--secondary-color);
 }
@@ -384,6 +386,7 @@ main {
 
 .contact p {
     font-size: 1.2em;
+    line-height: 1.6;
     margin-bottom: 10px;
 }
 
@@ -808,5 +811,85 @@ html {
     #contactForm button {
         width: 100%;
         padding: 10px;
+    }
+}
+/* CTA styling */
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Skill bars for visualizing skills */
+.skill-bar {
+    margin: 10px 0;
+    background-color: #ddd;
+    border-radius: 25px;
+}
+
+.skill-bar-inner {
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    width: 80%; /* Adjust based on skill level */
+}
+
+.skill-name {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+/* Skill stars styling */
+.stars {
+    display: inline-block;
+    font-size: 1.5em;
+    color: #ddd; /* Unfilled star color */
+    position: relative;
+    width: 5em; /* Space for 5 stars */
+}
+
+.stars::before {
+    content: "★★★★★"; /* Five unfilled stars */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffd700; /* Filled star color (Gold) */
+    overflow: hidden;
+    width: 0;
+    transition: width 1s ease-out; /* Animate star fill */
+}
+
+.stars[data-rating="1"]::before { width: 1em; } /* Fill 1 star */
+.stars[data-rating="2"]::before { width: 2em; } /* Fill 2 stars */
+.stars[data-rating="3"]::before { width: 3em; } /* Fill 3 stars */
+.stars[data-rating="4"]::before { width: 4em; } /* Fill 4 stars */
+.stars[data-rating="5"]::before { width: 5em; } /* Fill 5 stars */
+
+/* Animation trigger when section is visible */
+.section-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

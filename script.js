@@ -205,3 +205,29 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+// Function to check when the contact section is visible
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.getElementById('contact-me');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                // Once the section is visible, animate the stars
+                animateStars();
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(contactSection);
+});
+
+// Animate the stars when the contact section is visible
+function animateStars() {
+    const stars = document.querySelectorAll('.stars');
+    stars.forEach(star => {
+        const rating = star.getAttribute('data-rating');
+        star.querySelector('::before').style.width = `${rating}em`;
+    });
+}
