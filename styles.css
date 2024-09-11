@@ -15,7 +15,7 @@ body {
     position: left;
     color: var(--primary-color);
     background-color: var(--primary-bg-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s ease, color 0.5s ease;
     font-family: Arial;
     margin: 0;
     padding: 0;
@@ -611,6 +611,7 @@ html {
 
 #welcome-page.fade-out {
     opacity: 0;
+    transition: opacity 1.5s ease-out;
 }
 
 /* Button Animation */

@@ -45,7 +45,7 @@ async function displayRepositories() {
     
     const repos = await fetchRepositories();
     repoContainer.innerHTML = '';
-    
+    repos.sort((a, b) => b.stargazers_count - a.stargazers_count);  // Sort by stars
     repos.forEach(repo => {
         const repoElement = createRepoElement(repo);
         repoContainer.appendChild(repoElement);
