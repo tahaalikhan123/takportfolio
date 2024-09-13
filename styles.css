@@ -114,7 +114,33 @@ header {
     background-color: var(--hover-color);
     color: var(--light-bg-color);
 }
+.home-button {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: var(--primary-color);
+    color: var(--light-bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.home-button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.welcome-text {
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
 
+.welcome-button {
+    animation: fadeInUp 2s ease-in-out forwards;
+}
 /* Mobile nav */
 .mobile-nav {
     display: none; /* Hidden by default */
@@ -122,6 +148,8 @@ header {
 }
 
 .mobile-nav-toggle {
+    left: 10px; /* Move toggle button to the left */
+    right: auto;
     background: none;
     border: none;
     font-size: 1.5em;
@@ -129,6 +157,8 @@ header {
 }
 
 .mobile-nav-content {
+    left: 10px; /* Move to left */
+    right: auto;
     display: none;
     position: absolute;
     top: 50px;

@@ -223,12 +223,43 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(contactSection);
 });
 
-// Animate the stars when the contact section is visible
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.getElementById('contact-me');
+    if (!contactSection) {
+        console.warn('Contact section not found.');
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                // Ensure the stars are animated only when they are in view
+                animateStars();
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(contactSection);
+});
+
 function animateStars() {
     const stars = document.querySelectorAll('.stars');
+    if (!stars || stars.length === 0) {
+        console.warn('No stars elements found.');
+        return;
+    }
+
     stars.forEach(star => {
         const rating = star.getAttribute('data-rating');
-        star.style.setProperty('--star-width', `${rating}em`); // Ensure inline styling
-        star.querySelector('::before').style.width = `${rating}em`;  // Use the correct CSS property
+        if (rating) {
+            star.style.setProperty('--star-width', `${rating}em`);
+            const starBefore = star.querySelector('::before');
+            if (starBefore) {
+                starBefore.style.width = `${rating}em`;
+            }
+        }
     });
 }
