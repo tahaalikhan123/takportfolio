@@ -294,7 +294,9 @@ header {
 }
 
 .repo:hover {
-    box-shadow: var(--hover-shadow);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .repo h3 a {
@@ -808,21 +810,29 @@ html {
 
 /* Skill bars for visualizing skills */
 .skill-bar {
+    position: relative;
+    background-color: #f3f3f3;
+    height: 25px;
+    border-radius: 5px;
+    overflow: hidden;
     margin: 10px 0;
-    background-color: #ddd;
-    border-radius: 25px;
 }
 
 .skill-bar-inner {
-    height: 20px;
-    background-color: var(--primary-color);
-    border-radius: 25px;
-    width: 80%; /* Adjust based on skill level */
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+    animation: loadSkill 2s forwards;
 }
 
 .skill-name {
     font-size: 1em;
     margin-bottom: 5px;
+}
+
+@keyframes loadSkill {
+    0% { width: 0; }
+    100% { width: 80%; } /* Adjust width based on skill */
 }
 /* Skill stars styling */
 .stars {
