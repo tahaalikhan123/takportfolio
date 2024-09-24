@@ -1,17 +1,40 @@
-// Initialize AOS for animations
-$(document).ready(function () {
-    AOS.init({
-        duration: 1000, // Animation duration
-        easing: 'ease-in-out', // Animation easing
-        once: true, // Only animate once when scrolling
-    });
+// Declare submitted globally
+var submitted = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle form submission
+    const form = document.getElementById('contact-form');
+    const iframe = document.getElementById('hidden_iframe');
+
+    form.onsubmit = function () {
+        submitted = true;  // Set the flag when form is submitted
+    };
+
+    // Check if form was submitted when iframe loads
+    iframe.onload = function () {
+        if (submitted) {
+            formResponse();  // Call form response handler
+        }
+    };
 });
 
-// Fetch GitHub repositories and display them
+function formResponse() {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-response').style.display = 'block';
+}
+
 $(document).ready(function () {
+    // Initialize AOS for animations
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+    });
+
     const username = "tahaalikhan123";
     const repoList = $('.repo-grid');
 
+    // Fetch GitHub repositories and display them
     fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=10`)
         .then(response => response.json())
         .then(data => {
@@ -30,52 +53,38 @@ $(document).ready(function () {
                 repoList.append(repoCard);
             });
         })
-        .catch(error => console.error('Error fetching repos:', error));
+        .catch(error => {
+            console.error('Error fetching repos:', error);
+            repoList.append('<p>Failed to load repositories. Please try again later.</p>'); // User-friendly error
+        });
 
     // GitHub Contribution Chart
     new GitHubCalendar(".calendar", username, {
         responsive: true
     });
-});
 
-$(document).ready(function () {
+    // Navbar toggle
     $('.navbar-toggle').click(function () {
         $('.navbar-links').toggleClass('active');
-        console.log("Active class added?", $('.navbar-links').hasClass('active'));  // Check if active class is toggled
     });
-});
 
-// Show the scroll-to-top arrow when scrolling down
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 200) {
-        $('#scroll-to-top').addClass('show');
-    } else {
-        $('#scroll-to-top').removeClass('show');
-    }
-});
+    // Scroll to Top
+    $(window).scroll(function () {
+        $('#scroll-to-top').toggleClass('show', $(window).scrollTop() > 200);
+    });
 
-// Scroll to top when the arrow is clicked
-$('#scroll-to-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 600);
-});
+    $('#scroll-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
 
-// Animate skill progress bars on scroll
-$(document).ready(function () {
+    // Skill Progress Bars
     $(window).scroll(function () {
         var skillsTop = $('#skills').offset().top - window.innerHeight;
         if ($(window).scrollTop() > skillsTop) {
             $('.skill-card').each(function () {
-                var skillLevel = $(this).attr('data-skill');
-                $(this).find('.progress-bar').css('width', skillLevel + '%');
+                var skillLevel = $(this).data('skill');
+                $(this).find('.progress-bar').addClass('filled'); // Add class for progress instead of inline width
             });
         }
     });
 });
-
-var submitted = false;
-
-// Show success message after form submission
-function formResponse() {
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-response').style.display = 'block';
-}

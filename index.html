@@ -51,20 +51,19 @@
  <div id="scroll-to-top">
   <i class="arrow-up"></i>
 </div>
-  <header id="hero">
+<header id="hero">
     <div class="container">
       <h1 data-aos="zoom-in">Taha Ali Khan</h1>
       <h2 data-aos="fade-down" data-aos-delay="200">Data Analyst | Data Engineer</h2>
       <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
-        <p><i class="fas fa-map-marker-alt"></i> Sharjah, UAE</p>
-        <p><i class="fas fa-phone"></i> +971 56 2010813</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a></p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/tahaalikhan123" target="_blank">GitHub</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank">LinkedIn</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sharjah, UAE</p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> +971 56 2010813</p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a></p>
+        <p><i class="fab fa-github" aria-hidden="true"></i> <a href="https://github.com/tahaalikhan123" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        <p><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
       </div>
-    </div>
-    
-    <div class="download-container">
+    </div>  
+   <div class="download-container">
         <div class="arrow-container">
             <div class="arrow-up"></div>
         </div>
@@ -72,7 +71,7 @@
             Download Resume
         </a>
     </div>
-  </header>
+</header>
 
   <!-- About Me Section -->
   <section id="about">
@@ -202,39 +201,41 @@
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <div class="contact-container">
-        <!-- Contact Form -->
-        <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSe8Lk9iuGwK6mlpkZs_-H-bdZrHEAp7K3g2vun9RnXTpZH7WA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="entry.98885724" required placeholder="Enter your full name">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="entry.132597802" required placeholder="Enter your email">
-            </div>
-
-            <div class="form-group">
-                <label for="contact-number">Contact Number</label>
-                <input type="text" id="contact-number" name="entry.1797695648" required placeholder="Enter your contact number">
-            </div>
-
-            <div class="form-group">
-                <label for="inquiry">Inquiry</label>
-                <textarea id="inquiry" name="entry.713304567" required placeholder="Type your inquiry"></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Submit Inquiry</button>
-        </form>
-
-        <!-- Hidden iframe to prevent redirection -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { formResponse(); }"></iframe>
-        
-        <!-- Success message -->
-        <div id="form-response" style="display:none;">
-            <p>Thank you! Your inquiry has been submitted successfully.</p>
-        </div>
+<!-- Contact Form -->
+<form id="contact-form" 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSe8Lk9iuGwK6mlpkZs_-H-bdZrHEAp7K3g2vun9RnXTpZH7WA/formResponse"
+      method="POST" target="hidden_iframe">
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="entry.98885724" required placeholder="Enter your full name">
     </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="entry.132597802" required placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+        <label for="contact-number">Contact Number</label>
+        <input type="text" id="contact-number" name="entry.1797695648" required placeholder="Enter your contact number">
+    </div>
+
+    <div class="form-group">
+        <label for="inquiry">Inquiry</label>
+        <textarea id="inquiry" name="entry.713304567" required placeholder="Type your inquiry"></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Inquiry</button>
+</form>
+
+<!-- Hidden iframe to prevent redirection -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<!-- Success message -->
+<div id="form-response" style="display:none;">
+    <p>Thank you! Your inquiry has been submitted successfully.</p>
+</div>
+
 </section>
 
   <!-- Footer -->
