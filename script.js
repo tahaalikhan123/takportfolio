@@ -5,28 +5,37 @@ AOS.init({
     once: true, // Only animate once when scrolling
   });
   
-  // Fetch GitHub repositories dynamically
-  const username = 'tahaalikhan123';
-  const repoList = document.getElementById('repo-list');
-  
-  fetch(`https://api.github.com/users/${username}/repos`)
-    .then(response => response.json())
-    .then(repos => {
-      repos.forEach(repo => {
-        const repoCard = document.createElement('div');
-        repoCard.classList.add('project-card');
-        repoCard.setAttribute('data-aos', 'zoom-in');
-  
-        repoCard.innerHTML = `
-          <h4>${repo.name}</h4>
-          <p>${repo.description || 'No description available.'}</p>
-          <a href="${repo.html_url}" target="_blank">View Repository</a>
-        `;
-  
-        repoList.appendChild(repoCard);
-      });
-    })
-    .catch(error => console.error('Error fetching repos:', error));  
+  $(document).ready(function () {
+    // Fetch GitHub repositories and display them
+    const username = "tahaalikhan123";
+    const repoList = $('.repo-grid');
+
+    // Fetch GitHub repos using the GitHub API
+    fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=10`)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(repo => {
+                const repoCard = `
+                    <div class="repo-card">
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description || 'No description available.'}</p>
+                        <div class="repo-stats">
+                            <div><i class="fas fa-star"></i> ${repo.stargazers_count} Stars</div>
+                            <div><i class="fas fa-code-branch"></i> ${repo.forks_count} Forks</div>
+                        </div>
+                        <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+                    </div>
+                `;
+                repoList.append(repoCard);
+            });
+        })
+        .catch(error => console.error('Error fetching repos:', error));
+
+    // GitHub Contribution Chart (using GitHub Calendar library)
+    new GitHubCalendar(".calendar", username, {
+        responsive: true
+    });
+});
 
     // Toggle the hamburger menu on mobile
 $(document).ready(function () {
@@ -47,4 +56,17 @@ $(document).ready(function () {
 // Scroll to top when the arrow is clicked
 $('#scroll-to-top').click(function () {
   $('html, body').animate({ scrollTop: 0 }, 600);
+});
+
+// Animate skill progress bars on scroll
+$(document).ready(function () {
+  $(window).scroll(function () {
+      var skillsTop = $('#skills').offset().top - window.innerHeight;
+      if ($(window).scrollTop() > skillsTop) {
+          $('.skill-card').each(function () {
+              var skillLevel = $(this).attr('data-skill');
+              $(this).find('.progress-bar').css('width', skillLevel + '%');
+          });
+      }
+  });
 });

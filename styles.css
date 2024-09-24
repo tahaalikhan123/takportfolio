@@ -180,30 +180,77 @@ h3 {
 }
 
 /* Skills Section */
-#skills {
-    background: black; /* Black background */
-    padding: 50px 0;
-    color: white; /* White text on black background */
+/* Skills Section Styling */
+.skills-section {
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #d4af37; /* Gold title */
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .skill-card {
-    background: white; /* White background for skill cards */
-    color: black; /* Black text */
+    background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: 2px solid #d4af37; /* Gold border around skill cards */
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px); /* Hover effect - lift up */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #d4af37; /* Gold skill icon */
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Skill Progress Bar */
+.skill-progress {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #d4af37; /* Gold progress bar */
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+/* Hover Effect for Progress Bar */
+.skill-card:hover .progress-bar {
+    background-color: #f0c674; /* Lighter gold on hover */
 }
 
 /* Container to position the button and arrow */
@@ -275,6 +322,7 @@ h3 {
     margin-bottom: 40px;
 }
 
+/* Timeline Section */
 .timeline {
     position: relative;
     margin: 0 auto;
@@ -293,26 +341,16 @@ h3 {
     transform: translateX(-50%);
 }
 
+/* Timeline items */
 .timeline-item {
     position: relative;
     margin-bottom: 40px;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
 }
 
-.timeline-item:nth-child(odd) .timeline-content {
-    order: 1;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    order: -1;
-    text-align: right;
-    padding-right: 20px;
-}
-
+/* Timeline Dot */
 .timeline-dot {
     position: absolute;
     left: 50%;
@@ -324,6 +362,7 @@ h3 {
     z-index: 1;
 }
 
+/* Timeline content - Alternating left and right */
 .timeline-content {
     background-color: #f5f5f5;
     padding: 20px;
@@ -332,6 +371,21 @@ h3 {
     width: 45%;
 }
 
+/* Left-aligned items (odd) */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* Right-aligned items (even) */
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+    padding-right: 20px;
+    text-align: right;
+}
+
+/* Styling for timeline content */
 .timeline-content h3 {
     color: black;
     margin-bottom: 5px;
@@ -350,39 +404,111 @@ h3 {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    /* Timeline line shifts left */
     .timeline::before {
         left: 10px;
     }
 
+    /* All items align to the left on mobile */
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
-        order: 1;
+        margin: 0;
         text-align: left;
         width: calc(100% - 30px);
+        padding-left: 40px;
     }
 
+    /* Timeline dot shifts to the left */
     .timeline-item .timeline-dot {
         left: 0;
     }
 }
 
 /* GitHub Repositories Section */
-#github-projects {
-    background: black; /* Black background for GitHub section */
-    padding: 50px 0;
-    color: white; /* White text */
+/* GitHub Section Styling */
+.github-section {
+    padding: 40px;
+    background-color: #f5f5f5;
 }
 
-#repo-list .project-card {
-    background: white; /* White background for repo cards */
-    color: black; /* Black text */
-    border: 2px solid #d4af37; /* Gold border */
+.github-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #d4af37; /* Gold title */
+    margin-bottom: 40px;
+}
+
+.github-contribution-chart {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.github-contribution-chart h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.repo-card {
+    background-color: white;
     padding: 20px;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
 }
 
-#repo-list .project-card:hover {
-    transform: scale(1.05);
+.repo-card:hover {
+    transform: translateY(-10px); /* Hover effect - lift up */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.repo-card h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.repo-card p {
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.repo-card .repo-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.repo-card .repo-stats div {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.repo-card .repo-stats div i {
+    color: #d4af37; /* Gold icons */
+}
+
+.repo-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: #d4af37; /* Gold link button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.repo-card a:hover {
+    background-color: #f0c674; /* Lighter gold on hover */
 }
 
 /* Projects Section Styling */
