@@ -38,6 +38,78 @@ a:hover {
     padding: 20px;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #d4af37; /* Gold brand name */
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    font-size: 1rem;
+    padding: 8px;
+    color: black; /* Black links */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: white;
+    background-color: #d4af37; /* Gold background on hover */
+    border-radius: 5px;
+}
+
+/* Hamburger Menu for Mobile */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar-hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+/* Responsive Menu for Mobile */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-hamburger {
+        background-color: #d4af37; /* Gold for the hamburger lines */
+    }
+}
+
 /* Header Section */
 #hero {
     background: black; /* Dark background for hero section */
@@ -100,7 +172,7 @@ h3 {
 
 /* Container to position the button and arrow */
 .download-container {
-    position: fixed;
+    position: center;
     top: 10px;
     right: 10px;
     z-index: 1000;

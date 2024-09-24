@@ -27,3 +27,10 @@ AOS.init({
       });
     })
     .catch(error => console.error('Error fetching repos:', error));  
+
+    // Toggle the hamburger menu on mobile
+$(document).ready(function () {
+  $('.navbar-toggle').click(function () {
+      $('.navbar-links').toggleClass('active');
+  });
+});
