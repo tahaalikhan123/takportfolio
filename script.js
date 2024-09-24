@@ -1,8 +1,10 @@
 // Initialize AOS for animations
+$(document).ready(function () {
 AOS.init({
     duration: 1000, // Animation duration
     easing: 'ease-in-out', // Animation easing
     once: true, // Only animate once when scrolling
+})
   });
   
   $(document).ready(function () {
@@ -70,3 +72,11 @@ $(document).ready(function () {
       }
   });
 });
+
+var submitted = false;
+
+// Show success message after form submission
+function formResponse() {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-response').style.display = 'block';
+}
