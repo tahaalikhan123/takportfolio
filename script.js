@@ -34,3 +34,17 @@ $(document).ready(function () {
       $('.navbar-links').toggleClass('active');
   });
 });
+
+ // Show the scroll-to-top arrow when scrolling down
+ $(window).scroll(function () {
+  if ($(window).scrollTop() > 200) {
+      $('#scroll-to-top').addClass('show');
+  } else {
+      $('#scroll-to-top').removeClass('show');
+  }
+});
+
+// Scroll to top when the arrow is clicked
+$('#scroll-to-top').click(function () {
+  $('html, body').animate({ scrollTop: 0 }, 600);
+});

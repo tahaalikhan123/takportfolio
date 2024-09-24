@@ -110,6 +110,37 @@ a:hover {
     }
 }
 
+/* Scroll to Top Arrow */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #d4af37; /* Gold background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Hidden by default */
+    z-index: 1000;
+}
+
+#scroll-to-top i {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid white; /* White arrow */
+}
+
+/* Show the arrow when scrolling down */
+#scroll-to-top.show {
+    opacity: 1;
+}
+
 /* Header Section */
 #hero {
     background: black; /* Dark background for hero section */
