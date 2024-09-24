@@ -93,8 +93,9 @@ a:hover {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: white;
+        background-color: white; /* Background color to prevent overlap */
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure the menu appears above other content */
     }
 
     .navbar-links.active {
@@ -103,11 +104,15 @@ a:hover {
 
     .navbar-toggle {
         display: block;
+        cursor: pointer;
+        z-index: 1001; /* Ensures the toggle icon stays on top */
     }
 
     .navbar-hamburger {
-        background-color: #d4af37; /* Gold for the hamburger lines */
-    }
+        width: 25px;
+        height: 3px;
+        background-color: #d4af37; /* Gold hamburger icon */
+        margin: 5px 0;    }
 }
 
 /* Scroll to Top Arrow */
