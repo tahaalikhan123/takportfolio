@@ -88,3 +88,11 @@ $(document).ready(function () {
         }
     });
 });
+
+// Prevent automatic scroll to a section like #projects on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === "#projects") {
+        // Clear the hash to prevent auto-scroll on refresh
+        window.history.replaceState(null, null, ' ');
+    }
+});
