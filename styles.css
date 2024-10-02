@@ -611,3 +611,8 @@ footer {
 .contact-section {
     padding-top: 100px; /* Increase top padding */
 }
+
+.project-card a:hover .project-image {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
