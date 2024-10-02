@@ -56,8 +56,10 @@ a:hover {
     align-items: center;
     padding: 10px 20px;
     background-color: var(--white);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -112,20 +114,36 @@ a:hover {
 
 /* Responsive Menu for Mobile */
 @media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Add padding to body to account for fixed navbar */
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand {
+        flex: 1;
+    }
+
     .navbar-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
         background-color: var(--white);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
     }
 
     .navbar-links.active {
         display: flex;
+    }
+
+    .navbar-links a {
+        padding: 10px 20px;
     }
 
     .navbar-toggle {
@@ -534,4 +552,23 @@ footer {
     .timeline-item:nth-child(odd) .timeline-content {
         text-align: left;
     }
+
+    #hero, 
+    .skills-section,
+    .experience-section,
+    .github-section,
+    .projects-section,
+    .contact-section {
+        padding-top: 80px; /* Adjust for mobile */
+    }
+}
+
+/* Adjust other sections to account for fixed navbar */
+#hero, 
+.skills-section,
+.experience-section,
+.github-section,
+.projects-section,
+.contact-section {
+    padding-top: 100px; /* Increase top padding */
 }

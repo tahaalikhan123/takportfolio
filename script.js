@@ -27,8 +27,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar toggle functionality
     const navbarToggle = document.querySelector('.navbar-toggle');
     const navbarLinks = document.querySelector('.navbar-links');
-    navbarToggle.addEventListener('click', function () {
+    
+    function toggleNavbar() {
         navbarLinks.classList.toggle('active');
+    }
+
+    navbarToggle.addEventListener('click', toggleNavbar);
+
+    // Close navbar when a link is clicked (for mobile)
+    navbarLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            toggleNavbar();
+        }
+    });
+
+    // Close navbar when clicking outside
+    document.addEventListener('click', function(e) {
+        const isNavbarLink = e.target.closest('.navbar-links');
+        const isNavbarToggle = e.target.closest('.navbar-toggle');
+        if (!isNavbarLink && !isNavbarToggle && navbarLinks.classList.contains('active')) {
+            toggleNavbar();
+        }
     });
 
     // Scroll to Top functionality
