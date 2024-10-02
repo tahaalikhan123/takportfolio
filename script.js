@@ -88,11 +88,16 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(skills);
 
     // Fetch and display GitHub repositories
-    const username = "tahaalikhan123";
-    const repoList = document.querySelector('.repo-grid');
+    const username = "tahaalikhan123"; // Ensure this is correct
 
+    // Add error handling and logging for the repository fetch
     fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=10`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             data.forEach(repo => {
                 const repoCard = document.createElement('div');
@@ -114,8 +119,17 @@ document.addEventListener('DOMContentLoaded', function() {
             repoList.innerHTML = '<p>Failed to load repositories. Please try again later.</p>';
         });
 
-    // Initialize GitHub Contribution Chart
-    GitHubCalendar(".calendar", username, { responsive: true });
+    // Initialize GitHub Contribution Chart with more options
+    GitHubCalendar(".calendar", username, { 
+        responsive: true,
+        tooltips: true,
+        global_stats: true,
+        cache: 24 * 60 * 60 * 1000, // 24 hours cache
+        onFetchError: (error) => {
+            console.error('Error fetching GitHub calendar data:', error);
+            document.querySelector('.calendar').innerHTML = 'Failed to load GitHub contributions. Please try again later.';
+        }
+    });
 
     // Add smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
