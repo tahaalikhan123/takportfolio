@@ -2,6 +2,18 @@
 var submitted = false;
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevent automatic scroll to a section like #projects on page load
+    if (window.location.hash) {
+        // Prevent the default scroll
+        event.preventDefault();
+        
+        // Remove the hash from the URL without triggering a page reload
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+        
+        // Optionally, scroll to the top of the page
+        window.scrollTo(0, 0);
+    }
+
     // Handle form submission
     const form = document.getElementById('contact-form');
     const iframe = document.getElementById('hidden_iframe');
@@ -74,12 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { threshold: 0.1 });
     observer.observe(skills);
-
-    // Prevent automatic scroll to a section like #projects on page load
-    if (window.location.hash) {
-        // Clear the hash to prevent auto-scroll on refresh
-        window.history.replaceState(null, null, ' ');
-    }
 
     // Fetch and display GitHub repositories
     const username = "tahaalikhan123";
