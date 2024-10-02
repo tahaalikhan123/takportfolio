@@ -17,28 +17,29 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--white); /* Main background color */
-    color: var(--black); /* Default text color */
+    background-color: var(--white);
+    color: var(--black);
     line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
-    color: var(--black); /* Headers color */
+    color: var(--black);
 }
 
 a {
-    color: var(--gold); /* Links color */
+    color: var(--gold);
     text-decoration: none;
+    transition: color 0.3s ease; /* Add transition for smoother hover effect */
 }
 
 a:hover {
-    color: var(--light-gold); /* Hover color for links */
+    color: var(--light-gold);
 }
 
 /* Icons in contact section */
 .contact-info i {
     margin-right: 10px;
-    color: var(--gold); /* Gold icons */
+    color: var(--gold);
 }
 
 /* Container for content */
@@ -54,22 +55,26 @@ a:hover {
     align-items: center;
     padding: 10px 20px;
     background-color: var(--white);
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow for depth */
 }
 
 .navbar-brand {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    color: var(--gold); /* Gold brand name */
+    color: var(--gold);
     font-weight: bold;
 }
 
 /* Style the logo inside the navbar */
 .navbar-brand .logo {
-    height: 100px; /* Adjust the height of the logo as needed */
-    margin-right: 10px; /* Adds space between the logo and the text */
-    border-radius: 50%; /* Optional: Make the logo circular if it fits */
-    object-fit: contain; /* Ensures the logo maintains its aspect ratio */
+    height: 60px; /* Reduced height for better proportion */
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
 .navbar-links {
@@ -86,7 +91,7 @@ a:hover {
 
 .navbar-links a:hover {
     color: var(--white);
-    background-color: var(--gold); /* Gold background on hover */
+    background-color: var(--gold);
     border-radius: 5px;
 }
 
@@ -102,6 +107,7 @@ a:hover {
     height: 3px;
     background-color: var(--black);
     margin: 5px 0;
+    transition: 0.3s; /* Add transition for smoother animation */
 }
 
 /* Responsive Menu for Mobile */
@@ -124,15 +130,23 @@ a:hover {
 
     .navbar-toggle {
         display: block;
-        cursor: pointer;
-        z-index: 1001;
     }
 
     .navbar-hamburger {
-        width: 25px;
-        height: 3px;
-        background-color: var(--gold); /* Gold hamburger icon */
-        margin: 5px 0;
+        background-color: var(--gold);
+    }
+
+    /* Animation for hamburger to X */
+    .navbar-toggle.active .navbar-hamburger:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .navbar-toggle.active .navbar-hamburger:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .navbar-hamburger:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 
@@ -140,7 +154,7 @@ a:hover {
 #scroll-to-top {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px; /* Changed from left to right for better UX */
     width: 50px;
     height: 50px;
     background-color: var(--gold);
@@ -149,9 +163,13 @@ a:hover {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
     z-index: 1000;
+}
+
+#scroll-to-top:hover {
+    background-color: var(--light-gold);
 }
 
 #scroll-to-top i {
@@ -159,7 +177,7 @@ a:hover {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 20px solid var(--white); /* White arrow */
+    border-bottom: 20px solid var(--white);
 }
 
 #scroll-to-top.show {
@@ -168,22 +186,22 @@ a:hover {
 
 /* Hero Section */
 #hero {
-    background-color: var(--black); /* Dark background */
+    background-color: var(--black);
     text-align: center;
     padding: 100px 0;
-    color: var(--white); /* White text */
+    color: var(--white);
     animation: fadeIn 2s ease-in-out;
 }
 
 #hero h1 {
     font-size: 3rem;
-    color: var(--gold); /* Gold main heading */
+    color: var(--gold);
 }
 
 #hero h2 {
     font-size: 1.5rem;
     margin: 20px 0;
-    color: var(--white); /* White subheading */
+    color: var(--white);
 }
 
 .contact-info a {
@@ -191,7 +209,7 @@ a:hover {
 }
 
 .contact-info a:hover {
-    color: var(--light-gold); /* Hover effect */
+    color: var(--light-gold);
 }
 
 /* Section Headings */
@@ -208,7 +226,7 @@ h3 {
 .skills-section h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--gold); /* Gold title */
+    color: var(--gold);
 }
 
 .skills-grid {
@@ -236,7 +254,7 @@ h3 {
 
 .skill-card i {
     font-size: 3rem;
-    color: var(--gold); /* Gold icon */
+    color: var(--gold);
     margin-bottom: 15px;
 }
 
@@ -394,6 +412,7 @@ h3 {
     background-color: var(--gold);
     padding: 10px 20px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .repo-card a:hover {
@@ -424,6 +443,12 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -439,10 +464,11 @@ h3 {
 .download-link {
     display: inline-block;
     margin-top: 10px;
-    color: var(--black);
+    color: var(--white);
     background-color: var(--gold);
     padding: 10px 20px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .download-link:hover {
@@ -468,6 +494,8 @@ form {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 form:hover {
@@ -492,10 +520,18 @@ form:hover {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    outline: none;
 }
 
 textarea {
     height: 100px;
+    resize: vertical;
 }
 
 .submit-btn {
@@ -540,5 +576,24 @@ footer {
     }
     60% {
         transform: translateY(-5px);
+    }
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 31px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 90px);
+    }
+
+    .timeline-item {
+        justify-content: flex-end;
+    }
+
+    .timeline-dot {
+        left: 31px;
     }
 }
