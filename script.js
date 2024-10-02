@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fetch and display GitHub repositories
     const username = "tahaalikhan123"; // Ensure this is correct
+    const repoList = document.querySelector('.repo-grid'); // Add this line
 
     // Add error handling and logging for the repository fetch
     fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=10`)
@@ -116,7 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error fetching repos:', error);
-            repoList.innerHTML = '<p>Failed to load repositories. Please try again later.</p>';
+            if (repoList) {
+                repoList.innerHTML = '<p>Failed to load repositories. Please try again later.</p>';
+            } else {
+                console.error('Repository list container not found');
+            }
         });
 
     // Initialize GitHub Contribution Chart with more options
