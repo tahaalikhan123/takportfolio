@@ -7,57 +7,63 @@
   <meta name="description" content="Portfolio of Taha Ali Khan - Data Analyst & Data Engineer">
   <title>Taha Ali Khan | Portfolio</title>
 
-  <!-- Google Fonts for Typography -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- Include jQuery (must come before FullCalendar) -->
+  <!-- jQuery (required for FullCalendar) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- AOS library for scroll animations (must be before your custom scripts) -->
+  <!-- AOS library for scroll animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-  <!-- CSS for styling -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- GitHub Calendar CSS and JS -->
+  <!-- GitHub Calendar -->
   <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
   <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
 </head>
 
 <body>
-  <!-- Header Section -->
+  <!-- Navigation -->
   <nav class="navbar">
+    <!-- Brand logo and name -->
     <div class="navbar-brand">
         <img src="images/Taha Ali Khan.gif" alt="Brand Logo" class="logo">
         Welcome To My Portfolio
     </div>
+    <!-- Navigation links -->
     <div class="navbar-links">
-        <a href="#about">About Me</a>
         <a href="#skills">My Skills</a>
         <a href="#experience">Work Experience</a>
         <a href="#github-projects">Github Repos</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Reach out to me @</a>
     </div>
+    <!-- Mobile menu toggle -->
     <div class="navbar-toggle">
         <span class="navbar-hamburger"></span>
         <span class="navbar-hamburger"></span>
         <span class="navbar-hamburger"></span>
     </div>
   </nav>
-  <!-- Scroll to Top Arrow -->
+
+  <!-- Scroll to Top button -->
   <div id="scroll-to-top">
     <i class="arrow-up"></i>
   </div>
+
+  <!-- Hero section -->
   <header id="hero">
     <div class="container">
       <h1 data-aos="zoom-in">Taha Ali Khan</h1>
       <h2 data-aos="fade-down" data-aos-delay="200">Data Analyst | Data Engineer</h2>
+      <!-- Contact information -->
       <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
         <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sharjah, UAE</p>
         <p><i class="fas fa-phone" aria-hidden="true"></i> +971 56 2010813</p>
@@ -66,6 +72,7 @@
         <p><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
       </div>
     </div>  
+    <!-- Resume download button -->
     <div class="download-container">
         <div class="arrow-container">
             <div class="arrow-up"></div>
@@ -76,19 +83,11 @@
     </div>
   </header>
 
-  <!-- About Me Section -->
-  <section id="about">
-    <div class="container" data-aos="fade-right">
-      <h3>About Me</h3>
-      <p>Dynamic Data Analyst and Engineer with 3+ years of expertise in advanced data management, ETL optimization, and actionable reporting. I deliver data-driven solutions that enhance operational efficiency.</p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
+  <!-- Skills section -->
   <section id="skills" class="skills-section">
     <h2>Skills</h2>
     <div class="skills-grid">
-        <!-- Skill 1 -->
+        <!-- Data Analysis skill -->
         <div class="skill-card" data-skill="90">
             <i class="fas fa-code"></i>
             <h3>Data Analysis</h3>
@@ -98,7 +97,7 @@
             </div>
         </div>
 
-        <!-- Skill 2 -->
+        <!-- Data Visualization skill -->
         <div class="skill-card" data-skill="80">
             <i class="fas fa-chart-bar"></i>
             <h3>Data Visualization</h3>
@@ -108,7 +107,7 @@
             </div>
         </div>
 
-        <!-- Skill 3 -->
+        <!-- Data Engineering skill -->
         <div class="skill-card" data-skill="85">
             <i class="fas fa-database"></i>
             <h3>Data Engineering</h3>
@@ -118,7 +117,7 @@
             </div>
         </div>
 
-        <!-- Skill 4 -->
+        <!-- Project Management skill -->
         <div class="skill-card" data-skill="70">
             <i class="fas fa-project-diagram"></i>
             <h3>Project Management</h3>
@@ -130,10 +129,11 @@
     </div>
   </section>
 
+  <!-- Experience section -->
   <section id="experience" class="experience-section">
     <h2>Experience</h2>
     <div class="timeline">
-        <!-- Timeline Item 1 -->
+        <!-- Current job -->
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
@@ -143,7 +143,7 @@
             </div>
         </div>
 
-        <!-- Timeline Item 2 -->
+        <!-- Previous job -->
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
@@ -153,7 +153,7 @@
             </div>
         </div>
 
-        <!-- Timeline Item 3 -->
+        <!-- Earlier job -->
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
@@ -165,7 +165,7 @@
     </div>
   </section>
 
-  <!-- GitHub Repositories Section -->
+  <!-- GitHub Repositories section -->
   <section id="github-projects" class="github-section">
     <h2>GitHub Repositories</h2>
 
@@ -181,17 +181,18 @@
     </div>
   </section>
 
+  <!-- Projects section -->
   <section id="projects" class="projects-section">
     <h2>Projects</h2>
     <div class="project-grid">
-        <!-- Project 1: Embedded PDF Viewer -->
+        <!-- Project 1: ETL Optimization Report -->
         <div class="project-card">
             <h3>Project 1: ETL Optimization Report</h3>
             <embed src="pdf/CLV Prototype Dashboard.pdf" type="application/pdf" width="100%" height="400px" />
             <a href="pdf/CLV Prototype Dashboard.pdf" target="_blank" class="download-link">Download/View PDF</a>
         </div>
 
-        <!-- Project 2: Embedded PDF Viewer -->
+        <!-- Project 2: Data Integration White Paper -->
         <div class="project-card">
             <h3>Project 2: Data Integration White Paper</h3>
             <embed src="pdf/RFM_Dashboard.pdf" type="application/pdf" width="100%" height="400px" />
@@ -200,7 +201,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact section -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <div class="contact-container">
@@ -246,7 +247,7 @@
     <p>&copy; 2024 Taha Ali Khan. All rights reserved.</p>
   </footer>
 
-  <!-- Script for GitHub repositories -->
+  <!-- Custom JavaScript -->
   <script src="script.js"></script>
 </body>
 
