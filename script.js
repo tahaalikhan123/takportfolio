@@ -149,6 +149,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Add event listener for the "Join the Waitlist" button
+    const waitlistButton = document.querySelector('.cta-btn');
+    if (waitlistButton) {
+        waitlistButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will notify you when the waitlist opens.');
+            // You can add more functionality here, like opening a modal or navigating to a signup page
+        });
+    }
 });
 
 // Function to handle form submission response
