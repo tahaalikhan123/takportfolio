@@ -1,260 +1,263 @@
 /* Define CSS variables for common colors */
 :root {
-    --gold: #d4af37;
-    --light-gold: #f0c674;
-    --black: #000;
-    --white: #fff;
-    --gray-light: #f5f5f5;
-    --gray-dark: #888;
+  --gold: #d4af37;
+  --light-gold: #f0c674;
+  --black: #000;
+  --white: #fff;
+  --gray-light: #f5f5f5;
+  --gray-dark: #888;
 }
 
 /* Reset default styles and set box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Set base styles for the body */
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
-    line-height: 1.6;
+  font-family: "Lato", sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
 }
 
 /* Style headings */
-h1, h2, h3, h4 {
-    color: var(--black);
+h1,
+h2,
+h3,
+h4 {
+  color: var(--black);
 }
 
 /* Style links */
 a {
-    color: var(--gold);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* Style link hover state */
 a:hover {
-    color: var(--light-gold);
+  color: var(--light-gold);
 }
 
 /* Style icons in contact section */
 .contact-info i {
-    margin-right: 10px;
-    color: var(--gold);
+  margin-right: 10px;
+  color: var(--gold);
 }
 
 /* Set max-width and center content */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Style the navigation bar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--white);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the brand/logo area */
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    color: var(--gold);
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--gold);
+  font-weight: bold;
 }
 
 /* Style the logo image */
 .navbar-brand .logo {
-    height: 60px;
-    margin-right: 10px;
-    border-radius: 50%;
-    object-fit: contain;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
 /* Style navigation links */
 .navbar-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 /* Style individual navigation links */
 .navbar-links a {
-    font-size: 1rem;
-    padding: 8px;
-    color: var(--black);
-    transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 1rem;
+  padding: 8px;
+  color: var(--black);
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Style navigation link hover state */
 .navbar-links a:hover {
-    color: var(--white);
-    background-color: var(--gold);
-    border-radius: 5px;
+  color: var(--white);
+  background-color: var(--gold);
+  border-radius: 5px;
 }
 
 /* Hide hamburger menu by default */
 .navbar-toggle {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
 
 /* Style hamburger menu lines */
 .navbar-hamburger {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--black);
-    margin: 5px 0;
-    transition: 0.3s;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--black);
+  margin: 5px 0;
+  transition: 0.3s;
 }
 
 /* Responsive styles for mobile devices */
 @media (max-width: 768px) {
-    /* Add padding to body to account for fixed navbar */
-    body {
-        padding-top: 60px;
-    }
+  /* Add padding to body to account for fixed navbar */
+  body {
+    padding-top: 60px;
+  }
 
-    /* Allow navbar to wrap on small screens */
-    .navbar {
-        flex-wrap: wrap;
-    }
+  /* Allow navbar to wrap on small screens */
+  .navbar {
+    flex-wrap: wrap;
+  }
 
-    /* Adjust brand/logo area */
-    .navbar-brand {
-        flex: 1;
-    }
+  /* Adjust brand/logo area */
+  .navbar-brand {
+    flex: 1;
+  }
 
-    /* Hide navigation links by default on mobile */
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--white);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 10px 0;
-    }
+  /* Hide navigation links by default on mobile */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+  }
 
-    /* Show navigation links when active */
-    .navbar-links.active {
-        display: flex;
-    }
+  /* Show navigation links when active */
+  .navbar-links.active {
+    display: flex;
+  }
 
-    /* Adjust padding for navigation links */
-    .navbar-links a {
-        padding: 10px 20px;
-    }
+  /* Adjust padding for navigation links */
+  .navbar-links a {
+    padding: 10px 20px;
+  }
 
-    /* Show hamburger menu on mobile */
-    .navbar-toggle {
-        display: block;
-    }
+  /* Show hamburger menu on mobile */
+  .navbar-toggle {
+    display: block;
+  }
 
-    /* Style hamburger menu */
-    .navbar-hamburger {
-        background-color: var(--gold);
-    }
+  /* Style hamburger menu */
+  .navbar-hamburger {
+    background-color: var(--gold);
+  }
 
-    /* Animate hamburger menu to 'X' when active */
-    .navbar-toggle.active .navbar-hamburger:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
+  /* Animate hamburger menu to 'X' when active */
+  .navbar-toggle.active .navbar-hamburger:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
 
-    .navbar-toggle.active .navbar-hamburger:nth-child(2) {
-        opacity: 0;
-    }
+  .navbar-toggle.active .navbar-hamburger:nth-child(2) {
+    opacity: 0;
+  }
 
-    .navbar-toggle.active .navbar-hamburger:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+  .navbar-toggle.active .navbar-hamburger:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 /* Style scroll to top button */
 #scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-    opacity: 0;
-    z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  z-index: 1000;
 }
 
 /* Style scroll to top button hover state */
 #scroll-to-top:hover {
-    background-color: var(--light-gold);
+  background-color: var(--light-gold);
 }
 
 /* Style scroll to top button arrow */
 #scroll-to-top i {
-    border: 15px solid transparent;
-    border-bottom: 20px solid var(--white);
+  border: 15px solid transparent;
+  border-bottom: 20px solid var(--white);
 }
 
 /* Show scroll to top button when active */
 #scroll-to-top.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Style hero section */
 #hero {
-    background-color: var(--black);
-    text-align: center;
-    padding: 100px 0;
-    color: var(--white);
-    animation: fadeIn 2s ease-in-out;
+  background-color: var(--black);
+  text-align: center;
+  padding: 100px 0;
+  color: var(--white);
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Style hero section heading */
 #hero h1 {
-    font-size: 3rem;
-    color: var(--gold);
+  font-size: 3rem;
+  color: var(--gold);
 }
 
 /* Style hero section subheading */
 #hero h2 {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: var(--white);
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: var(--white);
 }
 
 /* Style contact info links */
 .contact-info a {
-    color: var(--gold);
+  color: var(--gold);
 }
 
 /* Style contact info links hover state */
 .contact-info a:hover {
-    color: var(--light-gold);
+  color: var(--light-gold);
 }
 
 /* Style section headings */
 h3 {
-    color: var(--gold);
+  color: var(--gold);
 }
 
 /* Common styles for main sections */
@@ -263,19 +266,19 @@ h3 {
 .github-section,
 .projects-section,
 .contact-section {
-    padding: 80px 40px;
+  padding: 80px 40px;
 }
 
 /* Set background color for alternating sections */
 .skills-section,
 .github-section,
 .contact-section {
-    background-color: var(--gray-light);
+  background-color: var(--gray-light);
 }
 
 .experience-section,
 .projects-section {
-    background-color: var(--white);
+  background-color: var(--white);
 }
 
 /* Style main section headings */
@@ -284,401 +287,415 @@ h3 {
 .github-section h2,
 .projects-section h2,
 .contact-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--gold);
-    margin-bottom: 40px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 40px;
 }
 
 /* Create grid layout for skills, repos, and projects */
 .skills-grid,
 .repo-grid,
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 /* Style cards for skills, repos, and projects */
 .skill-card,
 .repo-card,
 .project-card {
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Style card hover effects */
 .skill-card:hover,
 .repo-card:hover,
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Style skill card icons */
 .skill-card i {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 15px;
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 15px;
 }
 
 /* Style skill card headings and paragraphs */
 .skill-card h3,
 .skill-card p {
-    color: var(--black);
-    margin-bottom: 10px;
+  color: var(--black);
+  margin-bottom: 10px;
 }
 
 /* Adjust font size for skill card paragraphs */
 .skill-card p {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 /* Style skill progress bar */
 .skill-progress {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    height: 10px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
 }
 
 /* Style progress bar fill */
 .progress-bar {
-    height: 100%;
-    background-color: var(--gold);
-    border-radius: 10px;
-    transition: width 0.6s ease;
+  height: 100%;
+  background-color: var(--gold);
+  border-radius: 10px;
+  transition: width 0.6s ease;
 }
 
 /* Change progress bar color on hover */
 .skill-card:hover .progress-bar {
-    background-color: var(--light-gold);
+  background-color: var(--light-gold);
 }
 
 /* Style experience timeline */
 .timeline {
-    position: relative;
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 800px;
 }
 
 /* Create timeline vertical line */
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--gold);
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gold);
+  transform: translateX(-50%);
 }
 
 /* Style timeline items */
 .timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 
 /* Alternate timeline items */
 .timeline-item:nth-child(even) {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 /* Style timeline dots */
 .timeline-dot {
-    position: absolute;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: var(--gold);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 /* Style timeline content */
 .timeline-content {
-    background-color: var(--gray-light);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 45%;
+  background-color: var(--gray-light);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 45%;
 }
 
 /* Align timeline content */
 .timeline-item:nth-child(even) .timeline-content {
-    text-align: left;
+  text-align: left;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    text-align: right;
+  text-align: right;
 }
 
 /* Style timeline content headings */
 .timeline-content h3 {
-    color: var(--black);
+  color: var(--black);
 }
 
 /* Style timeline dates */
 .timeline-content span {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--gray-dark);
-    font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gray-dark);
+  font-style: italic;
 }
 
 /* Style timeline paragraphs */
 .timeline-content p {
-    color: var(--black);
+  color: var(--black);
 }
 
 /* Style GitHub repository cards */
 .repo-card {
-    background-color: var(--white);
+  background-color: var(--white);
 }
 
 /* Style repo card headings and paragraphs */
 .repo-card h3,
 .repo-card p {
-    color: var(--black);
+  color: var(--black);
 }
 
 /* Style repo stats icons */
 .repo-card .repo-stats div i {
-    color: var(--gold);
+  color: var(--gold);
 }
 
 /* Style buttons and links */
 .repo-card a,
 .download-link,
 .download-btn {
-    display: inline-block;
-    margin-top: 10px;
-    color: var(--white);
-    background-color: var(--gold);
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--white);
+  background-color: var(--gold);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Style button hover states */
 .repo-card a:hover,
 .download-link:hover,
 .download-btn:hover {
-    background-color: var(--light-gold);
-    color: var(--black);
+  background-color: var(--light-gold);
+  color: var(--black);
 }
 
 /* Style project cards */
 .project-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Style project card hover effects */
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Style project card headings */
 .project-card h3 {
-    padding: 20px 20px 10px;
-    color: var(--black);
+  padding: 20px 20px 10px;
+  color: var(--black);
 }
 
 /* Style project images */
 .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Style project card paragraphs */
 .project-card p {
-    padding: 0 20px 20px;
-    color: var(--gray-dark);
+  padding: 0 20px 20px;
+  color: var(--gray-dark);
 }
 
 /* Style project buttons */
 .project-btn {
-    display: inline-block;
-    margin: 0 20px 20px;
-    padding: 10px 20px;
-    background-color: var(--gold);
-    color: var(--white);
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin: 0 20px 20px;
+  padding: 10px 20px;
+  background-color: var(--gold);
+  color: var(--white);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Style project button hover states */
 .project-btn:hover {
-    background-color: var(--light-gold);
-    color: var(--black);
+  background-color: var(--light-gold);
+  color: var(--black);
 }
 
 /* Style call-to-action button */
 .cta-btn {
-    background-color: #4CAF50; /* Green color for CTA */
+  background-color: #4caf50; /* Green color for CTA */
 }
 
 /* Style call-to-action button hover state */
 .cta-btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* Style contact form */
 form {
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 600px;
-    margin: 0 auto;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Style form hover effect */
 form:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Style form groups */
 .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 /* Style form labels */
 .form-group label {
-    color: var(--black);
-    font-weight: bold;
+  color: var(--black);
+  font-weight: bold;
 }
 
 /* Style form inputs and textareas */
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
 /* Style form input focus states */
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--gold);
-    outline: none;
+  border-color: var(--gold);
+  outline: none;
 }
 
 /* Style textarea */
 textarea {
-    height: 100px;
-    resize: vertical;
+  height: 100px;
+  resize: vertical;
 }
 
 /* Style submit button */
 .submit-btn {
-    padding: 10px 20px;
-    background-color: var(--gold);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px 20px;
+  background-color: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Style submit button hover state */
 .submit-btn:hover {
-    background-color: var(--light-gold);
-    color: var(--black);
+  background-color: var(--light-gold);
+  color: var(--black);
 }
 
 /* Style footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: var(--black);
-    color: var(--white);
+  text-align: center;
+  padding: 20px;
+  background: var(--black);
+  color: var(--white);
 }
 
 /* Define animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    /* Adjust timeline for mobile */
-    .timeline::before {
-        left: 31px;
-    }
+  /* Adjust timeline for mobile */
+  .timeline::before {
+    left: 31px;
+  }
 
-    .timeline-content {
-        width: calc(100% - 90px);
-    }
+  .timeline-content {
+    width: calc(100% - 90px);
+  }
 
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        justify-content: flex-end;
-    }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    justify-content: flex-end;
+  }
 
-    .timeline-dot {
-        left: 31px;
-    }
+  .timeline-dot {
+    left: 31px;
+  }
 
-    .timeline-item:nth-child(even) .timeline-content,
-    .timeline-item:nth-child(odd) .timeline-content {
-        text-align: left;
-    }
+  .timeline-item:nth-child(even) .timeline-content,
+  .timeline-item:nth-child(odd) .timeline-content {
+    text-align: left;
+  }
 
-    /* Adjust section padding for mobile */
-    #hero, 
-    .skills-section,
-    .experience-section,
-    .github-section,
-    .projects-section,
-    .contact-section {
-        padding-top: 80px;
-    }
+  /* Adjust section padding for mobile */
+  #hero,
+  .skills-section,
+  .experience-section,
+  .github-section,
+  .projects-section,
+  .contact-section {
+    padding-top: 80px;
+  }
 }
 
 /* Adjust sections to account for fixed navbar */
-#hero, 
+#hero,
 .skills-section,
 .experience-section,
 .github-section,
 .projects-section,
 .contact-section {
-    padding-top: 100px; /* Increase top padding */
+  padding-top: 100px; /* Increase top padding */
 }
 
 /* Style project image hover effect */
 .project-card a:hover .project-image {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
