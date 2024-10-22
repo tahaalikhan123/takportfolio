@@ -214,6 +214,7 @@
             src="https://via.placeholder.com/400x200?text=CLV"
             alt="CLV Report"
             class="project-image"
+            onclick="openLightbox(this)"
           />
           <p>
             Customer Lifetime Value based on a dataset extracted from a retail
@@ -346,5 +347,11 @@
 
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
+
+    <!-- Add this at the end of your body tag -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
   </body>
 </html>

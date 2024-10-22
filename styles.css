@@ -713,9 +713,56 @@ footer {
 }
 
 @keyframes blink {
-  0%  { background-color: var(--gold); }
-  49% { background-color: var(--gold); }
-  50% { background-color: transparent; }
-  99% { background-color: transparent; }
-  100%  { background-color: var(--gold); }
+  0% {
+    background-color: var(--gold);
+  }
+  49% {
+    background-color: var(--gold);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--gold);
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
