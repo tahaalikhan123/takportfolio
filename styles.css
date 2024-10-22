@@ -699,3 +699,23 @@ footer {
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--gold);
+  margin-left: 0.1rem;
+  animation: blink 1s infinite;
+}
+
+.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0%  { background-color: var(--gold); }
+  49% { background-color: var(--gold); }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: var(--gold); }
+}
