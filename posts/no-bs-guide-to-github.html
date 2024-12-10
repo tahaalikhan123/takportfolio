@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A straightforward guide to understanding and using GitHub effectively" />
+    <title>No BS Guide to GitHub | Taha Ali Khan</title>
+
+    <!-- External CSS and Font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../blog-styles.css" />
+    <style>
+      .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        color: var(--text-primary);
+      }
+      
+      .post-content h1, .post-content h2, .post-content h3 {
+        color: var(--gold);
+        margin: 1.5em 0 0.5em;
+      }
+      
+      .post-content code {
+        background-color: var(--bg-secondary);
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+        color: var(--text-primary);
+      }
+      
+      .post-content pre {
+        background-color: var(--bg-secondary);
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid var(--card-border);
+        margin: 1em 0;
+        color: var(--text-primary);
+      }
+      
+      .post-content pre code {
+        padding: 0;
+        background: none;
+      }
+      
+      .post-content ul, .post-content ol {
+        margin: 1em 0 1em 1.5em;
+        line-height: 1.6;
+        color: var(--text-primary);
+      }
+      
+      .post-content p {
+        margin: 1em 0;
+        line-height: 1.6;
+        color: var(--text-primary);
+      }
+      
+      .highlight {
+        color: var(--gold);
+        font-weight: bold;
+      }
+      
+      .post-meta {
+        margin: 20px 0;
+        color: var(--text-primary);
+        opacity: 0.8;
+      }
+      
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--card-border);
+      }
+      
+      .post-navigation a {
+        color: var(--gold);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .post-navigation a:hover {
+        color: var(--light-gold);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-brand">
+        <img src="../images/Taha Ali Khan.gif" alt="Taha Ali Khan's Logo" class="logo" width="60" height="60" />
+        <span>Welcome To My Blog</span>
+      </div>
+      <div class="navbar-links" role="menubar">
+        <a href="../index.html#about" role="menuitem">About</a>
+        <a href="../index.html#skills" role="menuitem">Skills</a>
+        <a href="../index.html#experience" role="menuitem">Experience</a>
+        <a href="../index.html#github-projects" role="menuitem">GitHub</a>
+        <a href="../index.html#projects" role="menuitem">Projects</a>
+        <a href="../blog.html" role="menuitem">Blog</a>
+        <a href="../index.html#contact" role="menuitem">Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+      <article class="post-content">
+        <div class="post-meta">
+          <span><i class="far fa-calendar"></i> March 13, 2024</span>
+          <span><i class="far fa-clock"></i> 10 min read</span>
+          <span><i class="far fa-folder"></i> Technology</span>
+        </div>
+
+        <h1>No BS Guide to GitHub</h1>
+
+        <h2>What is GitHub?</h2>
+        <p>GitHub is a platform where developers store, manage, and collaborate on code. Think of it as <span class="highlight">Google Drive for code</span>, with version control powered by Git.</p>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>No BS Guide to GitHub</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              margin: 20px;
+              color: #333;
+            }
+            h1, h2, h3 {
+              color: #0056b3;
+            }
+            code {
+              background-color: #f4f4f4;
+              padding: 4px 6px;
+              border-radius: 4px;
+              font-family: "Courier New", Courier, monospace;
+            }
+            pre {
+              background-color: #f4f4f4;
+              padding: 10px;
+              border-radius: 6px;
+              overflow-x: auto;
+            }
+            ul {
+              margin: 10px 0 10px 20px;
+            }
+            .highlight {
+              color: #0056b3;
+              font-weight: bold;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>No BS Guide to GitHub</h1>
+        
+          <h2>What is GitHub?</h2>
+          <p>GitHub is a platform where developers store, manage, and collaborate on code. Think of it as <span class="highlight">Google Drive for code</span>, with version control powered by Git.</p>
+        
+          <h2>Common Git Terms (No Fluff)</h2>
+          <ul>
+            <li><code>git init</code>: Start tracking a project with Git (like setting up a blank notebook for your code).</li>
+            <li><code>git add .</code>: Stage all changes in your code (select files to save).</li>
+            <li><code>git commit -m "message"</code>: Save your changes locally with a description.</li>
+            <li><code>git push</code>: Upload your changes to GitHub.</li>
+            <li><code>git pull</code>: Download the latest changes from GitHub.</li>
+            <li><code>git merge</code>: Combine changes from one branch into another.</li>
+            <li><code>git rebase</code>: Reapply commits from one branch on top of another (tidy history).</li>
+            <li><strong>Branch</strong>: A parallel version of your project (default: <code>main</code>).</li>
+            <li><strong>Repository (repo)</strong>: A folder containing your project and its history.</li>
+          </ul>
+        
+          <h2>Step-by-Step Instructions to Use GitHub</h2>
+        
+          <h3>1. Setting Up</h3>
+          <ol>
+            <li><strong>Install Git:</strong> Download from <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
+            <li><strong>Create a GitHub Account:</strong> Sign up at <a href="https://github.com/" target="_blank">github.com</a>.</li>
+          </ol>
+        
+          <h3>2. Starting a Project</h3>
+          <pre>
+        cd path/to/your/project
+        git init
+          </pre>
+        
+          <h3>3. Adding Files and Committing Changes</h3>
+          <pre>
+        git add .
+        git commit -m "Initial commit"
+          </pre>
+        
+          <h3>4. Linking to GitHub</h3>
+          <ol>
+            <li>Create a repository on GitHub.</li>
+            <li>Link your local project:
+              <pre>
+        git remote add origin https://github.com/your-username/your-repo-name.git
+              </pre>
+            </li>
+          </ol>
+        
+          <h3>5. Pushing Your Code</h3>
+          <pre>
+        git push -u origin main
+          </pre>
+        
+          <h3>6. Making Changes</h3>
+          <pre>
+        git add .
+        git commit -m "Describe your change"
+        git push
+          </pre>
+        
+          <h3>7. Pulling Changes</h3>
+          <pre>
+        git pull origin main
+          </pre>
+        
+          <h3>8. Working with Branches</h3>
+          <ul>
+            <li>Create a branch:
+              <pre>
+        git checkout -b feature-name
+              </pre>
+            </li>
+            <li>Merge into <code>main</code>:
+              <pre>
+        git checkout main
+        git merge feature-name
+        git push
+              </pre>
+            </li>
+          </ul>
+        
+          <h3>9. Advanced Commands</h3>
+          <ul>
+            <li><strong>Rebase:</strong>
+              <pre>
+        git rebase main
+              </pre>
+            </li>
+            <li><strong>Resolve Merge Conflicts:</strong> Fix conflicted files, then:
+              <pre>
+        git add .
+        git commit
+              </pre>
+            </li>
+          </ul>
+        
+          <h3>10. Cloning a Repo</h3>
+          <pre>
+        git clone https://github.com/user/repo-name.git
+          </pre>
+        
+          <h3>11. Contributing to Open Source</h3>
+          <ol>
+            <li>Fork a repository on GitHub.</li>
+            <li>Clone it:
+              <pre>
+        git clone https://github.com/your-username/forked-repo.git
+              </pre>
+            </li>
+            <li>Make changes, commit, and push.</li>
+            <li>Open a Pull Request (PR) on GitHub.</li>
+          </ol>
+        
+          <h2>Golden Rules</h2>
+          <ul>
+            <li><strong>Commit often:</strong> Don’t wait for big changes.</li>
+            <li><strong>Write clear commit messages:</strong> Summarize what changed.</li>
+            <li><strong>Pull before you push:</strong> Always get the latest changes.</li>
+          </ul>        
+
+        <div class="post-navigation">
+          <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Taha Ali Khan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+  </body>
+</html> 
