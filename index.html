@@ -35,9 +35,6 @@
   </head>
 
   <body>
-    <!-- Skip Navigation -->
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
-    
     <!-- Navigation bar -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="navbar-brand">
@@ -45,11 +42,13 @@
         <span>Welcome To My Portfolio</span>
       </div>
       <div class="navbar-links" role="menubar">
-        <a href="#skills" role="menuitem">My Skills</a>
-        <a href="#experience" role="menuitem">Work Experience</a>
-        <a href="#github-projects" role="menuitem">Github Repos</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#skills" role="menuitem">Skills</a>
+        <a href="#experience" role="menuitem">Experience</a>
+        <a href="#github-projects" role="menuitem">GitHub</a>
         <a href="#projects" role="menuitem">Projects</a>
-        <a href="#contact" role="menuitem">Reach out to me @</a>
+        <a href="blog.html" role="menuitem">Blog</a>
+        <a href="#contact" role="menuitem">Contact</a>
       </div>
       <button class="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
@@ -69,55 +68,52 @@
     <!-- Hero section -->
     <header id="hero">
       <div class="container">
-        <h1 data-aos="zoom-in">Taha Ali Khan</h1>
-        <h2 data-aos="fade-down" data-aos-delay="200">
-          <span id="typed-text"></span><span class="cursor">&nbsp;</span>
-        </h2>
-        <!-- Contact information -->
-        <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
-          <p>
-            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sharjah,
-            UAE
-          </p>
-          <p><i class="fas fa-phone" aria-hidden="true"></i> +971 56 2010813</p>
-          <p>
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a>
-          </p>
-          <p>
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <a
-              href="https://github.com/tahaalikhan123"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-          </p>
-          <p>
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-            <a
-              href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn</a
-            >
-          </p>
+        <div class="hero-content">
+          <h1 data-aos="zoom-in">Taha Ali Khan</h1>
+          <h2 data-aos="fade-down" data-aos-delay="200">
+            <span id="typed-text"></span><span class="cursor">&nbsp;</span>
+          </h2>
+          
+          <div class="hero-details" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Sharjah, UAE</span>
+            </div>
+            
+            <div class="hero-social">
+              <a href="tel:+971562010813" class="hero-link">
+                <i class="fas fa-phone"></i>
+                <span>+971 56 2010813</span>
+              </a>
+              
+              <a href="mailto:tahaalikhan30@gmail.com" class="hero-link">
+                <i class="fas fa-envelope"></i>
+                <span>tahaalikhan30@gmail.com</span>
+              </a>
+              
+              <a href="https://github.com/tahaalikhan123" target="_blank" rel="noopener noreferrer" class="hero-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank" rel="noopener noreferrer" class="hero-link">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-cta" data-aos="fade-up" data-aos-delay="600">
+            <a href="pdf/resume.pdf" download class="download-btn">
+              <i class="fas fa-download"></i>
+              Download Resume
+            </a>
+          </div>
         </div>
       </div>
-      <!-- Resume download button -->
-      <div class="download-container">
-        <div class="arrow-container">
-          <div class="arrow-up"></div>
-        </div>
-        <a
-          href="pdf/resume.pdf"
-          download
-          class="download-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Download Resume
-        </a>
+      
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
       </div>
     </header>
 
@@ -273,74 +269,29 @@
 
     <!-- Contact section -->
     <section id="contact" class="contact-section">
-      <h2>Contact Us</h2>
+      <h2>Contact Me</h2>
       <div class="contact-container">
-        <!-- Contact Form -->
-        <form
-          id="contact-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSe8Lk9iuGwK6mlpkZs_-H-bdZrHEAp7K3g2vun9RnXTpZH7WA/formResponse"
-          method="POST"
-          target="hidden_iframe"
-        >
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="entry.98885724"
-              required
-              placeholder="Enter your full name"
-              autocomplete="name"
-            />
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Sharjah, UAE</p>
           </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="entry.132597802"
-              required
-              placeholder="Enter your email"
-              autocomplete="email"
-            />
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p>+971 56 2010813</p>
           </div>
-
-          <div class="form-group">
-            <label for="contact-number">Contact Number</label>
-            <input
-              type="tel"
-              id="contact-number"
-              name="entry.1797695648"
-              required
-              placeholder="Enter your contact number"
-              autocomplete="tel"
-            />
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:tahaalikhan30@gmail.com">tahaalikhan30@gmail.com</a>
           </div>
-
-          <div class="form-group">
-            <label for="inquiry">Inquiry</label>
-            <textarea
-              id="inquiry"
-              name="entry.713304567"
-              required
-              placeholder="Type your inquiry"
-            ></textarea>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/tahaalikhan123" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
-
-          <button type="submit" class="submit-btn">Submit Inquiry</button>
-        </form>
-
-        <!-- Hidden iframe to prevent redirection -->
-        <iframe
-          name="hidden_iframe"
-          id="hidden_iframe"
-          style="display: none"
-        ></iframe>
-
-        <!-- Success message -->
-        <div id="form-response" style="display: none">
-          <p>Thank you! Your inquiry has been submitted successfully.</p>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/taha-ali-khan-5107691b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>

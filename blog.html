@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blog posts by Taha Ali Khan - Data Analyst & Data Engineer" />
+    <title>Blog | Taha Ali Khan</title>
+
+    <!-- External CSS and Font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="blog-styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-brand">
+        <img src="images/Taha Ali Khan.gif" alt="Taha Ali Khan's Logo" class="logo" width="60" height="60" />
+        <span>Welcome To My Blog</span>
+      </div>
+      <div class="navbar-links" role="menubar">
+        <a href="index.html#about" role="menuitem">About</a>
+        <a href="index.html#skills" role="menuitem">Skills</a>
+        <a href="index.html#experience" role="menuitem">Experience</a>
+        <a href="index.html#github-projects" role="menuitem">GitHub</a>
+        <a href="index.html#projects" role="menuitem">Projects</a>
+        <a href="blog.html" role="menuitem" aria-current="page">Blog</a>
+        <a href="index.html#contact" role="menuitem">Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+      <header class="blog-header">
+        <h1>My Blog</h1>
+        <p>Sharing insights about Data Analysis, Engineering, and Technology</p>
+      </header>
+
+      <!-- Blog Categories -->
+      <div class="blog-categories">
+        <button class="category-btn active" data-category="all">All Posts</button>
+        <button class="category-btn" data-category="data-analysis">Data Analysis</button>
+        <button class="category-btn" data-category="data-engineering">Data Engineering</button>
+        <button class="category-btn" data-category="tech">Technology</button>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="blog-grid">
+        <!-- Posts will be dynamically added here -->
+        <p class="no-posts">No blog posts yet. Check back soon!</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Taha Ali Khan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+  </body>
+</html> 
