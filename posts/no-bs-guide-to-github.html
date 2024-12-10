@@ -25,6 +25,10 @@
         color: var(--gold);
         margin: 1.5em 0 0.5em;
       }
+
+      .post-content h1 { font-size: 2.5rem; }
+      .post-content h2 { font-size: 2rem; }
+      .post-content h3 { font-size: 1.5rem; }
       
       .post-content code {
         background-color: var(--bg-secondary);
@@ -41,7 +45,6 @@
         overflow-x: auto;
         border: 1px solid var(--card-border);
         margin: 1em 0;
-        color: var(--text-primary);
       }
       
       .post-content pre code {
@@ -52,13 +55,20 @@
       .post-content ul, .post-content ol {
         margin: 1em 0 1em 1.5em;
         line-height: 1.6;
-        color: var(--text-primary);
       }
       
       .post-content p {
         margin: 1em 0;
         line-height: 1.6;
-        color: var(--text-primary);
+      }
+
+      .post-content a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+
+      .post-content a:hover {
+        text-decoration: underline;
       }
       
       .highlight {
@@ -70,6 +80,14 @@
         margin: 20px 0;
         color: var(--text-primary);
         opacity: 0.8;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .post-meta i {
+        color: var(--gold);
+        margin-right: 5px;
       }
       
       .post-navigation {
@@ -83,11 +101,23 @@
       .post-navigation a {
         color: var(--gold);
         text-decoration: none;
-        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
       .post-navigation a:hover {
-        color: var(--light-gold);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .post-content {
+          padding: 15px;
+        }
+
+        .post-content h1 { font-size: 2rem; }
+        .post-content h2 { font-size: 1.5rem; }
+        .post-content h3 { font-size: 1.25rem; }
       }
     </style>
   </head>
@@ -130,163 +160,97 @@
 
         <h2>What is GitHub?</h2>
         <p>GitHub is a platform where developers store, manage, and collaborate on code. Think of it as <span class="highlight">Google Drive for code</span>, with version control powered by Git.</p>
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>No BS Guide to GitHub</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              line-height: 1.6;
-              margin: 20px;
-              color: #333;
-            }
-            h1, h2, h3 {
-              color: #0056b3;
-            }
-            code {
-              background-color: #f4f4f4;
-              padding: 4px 6px;
-              border-radius: 4px;
-              font-family: "Courier New", Courier, monospace;
-            }
-            pre {
-              background-color: #f4f4f4;
-              padding: 10px;
-              border-radius: 6px;
-              overflow-x: auto;
-            }
-            ul {
-              margin: 10px 0 10px 20px;
-            }
-            .highlight {
-              color: #0056b3;
-              font-weight: bold;
-            }
-          </style>
-        </head>
-        <body>
-          <h1>No BS Guide to GitHub</h1>
-        
-          <h2>What is GitHub?</h2>
-          <p>GitHub is a platform where developers store, manage, and collaborate on code. Think of it as <span class="highlight">Google Drive for code</span>, with version control powered by Git.</p>
-        
-          <h2>Common Git Terms (No Fluff)</h2>
-          <ul>
-            <li><code>git init</code>: Start tracking a project with Git (like setting up a blank notebook for your code).</li>
-            <li><code>git add .</code>: Stage all changes in your code (select files to save).</li>
-            <li><code>git commit -m "message"</code>: Save your changes locally with a description.</li>
-            <li><code>git push</code>: Upload your changes to GitHub.</li>
-            <li><code>git pull</code>: Download the latest changes from GitHub.</li>
-            <li><code>git merge</code>: Combine changes from one branch into another.</li>
-            <li><code>git rebase</code>: Reapply commits from one branch on top of another (tidy history).</li>
-            <li><strong>Branch</strong>: A parallel version of your project (default: <code>main</code>).</li>
-            <li><strong>Repository (repo)</strong>: A folder containing your project and its history.</li>
-          </ul>
-        
-          <h2>Step-by-Step Instructions to Use GitHub</h2>
-        
-          <h3>1. Setting Up</h3>
-          <ol>
-            <li><strong>Install Git:</strong> Download from <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
-            <li><strong>Create a GitHub Account:</strong> Sign up at <a href="https://github.com/" target="_blank">github.com</a>.</li>
-          </ol>
-        
-          <h3>2. Starting a Project</h3>
-          <pre>
-        cd path/to/your/project
-        git init
-          </pre>
-        
-          <h3>3. Adding Files and Committing Changes</h3>
-          <pre>
-        git add .
-        git commit -m "Initial commit"
-          </pre>
-        
-          <h3>4. Linking to GitHub</h3>
-          <ol>
-            <li>Create a repository on GitHub.</li>
-            <li>Link your local project:
-              <pre>
-        git remote add origin https://github.com/your-username/your-repo-name.git
-              </pre>
-            </li>
-          </ol>
-        
-          <h3>5. Pushing Your Code</h3>
-          <pre>
-        git push -u origin main
-          </pre>
-        
-          <h3>6. Making Changes</h3>
-          <pre>
-        git add .
-        git commit -m "Describe your change"
-        git push
-          </pre>
-        
-          <h3>7. Pulling Changes</h3>
-          <pre>
-        git pull origin main
-          </pre>
-        
-          <h3>8. Working with Branches</h3>
-          <ul>
-            <li>Create a branch:
-              <pre>
-        git checkout -b feature-name
-              </pre>
-            </li>
-            <li>Merge into <code>main</code>:
-              <pre>
-        git checkout main
-        git merge feature-name
-        git push
-              </pre>
-            </li>
-          </ul>
-        
-          <h3>9. Advanced Commands</h3>
-          <ul>
-            <li><strong>Rebase:</strong>
-              <pre>
-        git rebase main
-              </pre>
-            </li>
-            <li><strong>Resolve Merge Conflicts:</strong> Fix conflicted files, then:
-              <pre>
-        git add .
-        git commit
-              </pre>
-            </li>
-          </ul>
-        
-          <h3>10. Cloning a Repo</h3>
-          <pre>
-        git clone https://github.com/user/repo-name.git
-          </pre>
-        
-          <h3>11. Contributing to Open Source</h3>
-          <ol>
-            <li>Fork a repository on GitHub.</li>
-            <li>Clone it:
-              <pre>
-        git clone https://github.com/your-username/forked-repo.git
-              </pre>
-            </li>
-            <li>Make changes, commit, and push.</li>
-            <li>Open a Pull Request (PR) on GitHub.</li>
-          </ol>
-        
-          <h2>Golden Rules</h2>
-          <ul>
-            <li><strong>Commit often:</strong> Don’t wait for big changes.</li>
-            <li><strong>Write clear commit messages:</strong> Summarize what changed.</li>
-            <li><strong>Pull before you push:</strong> Always get the latest changes.</li>
-          </ul>        
+
+        <h2>Common Git Terms (No Fluff)</h2>
+        <ul>
+          <li><code>git init</code>: Start tracking a project with Git (like setting up a blank notebook for your code).</li>
+          <li><code>git add .</code>: Stage all changes in your code (select files to save).</li>
+          <li><code>git commit -m "message"</code>: Save your changes locally with a description.</li>
+          <li><code>git push</code>: Upload your changes to GitHub.</li>
+          <li><code>git pull</code>: Download the latest changes from GitHub.</li>
+          <li><code>git merge</code>: Combine changes from one branch into another.</li>
+          <li><code>git rebase</code>: Reapply commits from one branch on top of another (tidy history).</li>
+          <li><strong>Branch</strong>: A parallel version of your project (default: <code>main</code>).</li>
+          <li><strong>Repository (repo)</strong>: A folder containing your project and its history.</li>
+        </ul>
+
+        <h2>Step-by-Step Instructions to Use GitHub</h2>
+
+        <h3>1. Setting Up</h3>
+        <ol>
+          <li><strong>Install Git:</strong> Download from <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
+          <li><strong>Create a GitHub Account:</strong> Sign up at <a href="https://github.com/" target="_blank">github.com</a>.</li>
+        </ol>
+
+        <h3>2. Starting a Project</h3>
+        <pre><code>cd path/to/your/project
+git init</code></pre>
+
+        <h3>3. Adding Files and Committing Changes</h3>
+        <pre><code>git add .
+git commit -m "Initial commit"</code></pre>
+
+        <h3>4. Linking to GitHub</h3>
+        <ol>
+          <li>Create a repository on GitHub.</li>
+          <li>Link your local project:
+            <pre><code>git remote add origin https://github.com/your-username/your-repo-name.git</code></pre>
+          </li>
+        </ol>
+
+        <h3>5. Pushing Your Code</h3>
+        <pre><code>git push -u origin main</code></pre>
+
+        <h3>6. Making Changes</h3>
+        <pre><code>git add .
+git commit -m "Describe your change"
+git push</code></pre>
+
+        <h3>7. Pulling Changes</h3>
+        <pre><code>git pull origin main</code></pre>
+
+        <h3>8. Working with Branches</h3>
+        <ul>
+          <li>Create a branch:
+            <pre><code>git checkout -b feature-name</code></pre>
+          </li>
+          <li>Merge into <code>main</code>:
+            <pre><code>git checkout main
+git merge feature-name
+git push</code></pre>
+          </li>
+        </ul>
+
+        <h3>9. Advanced Commands</h3>
+        <ul>
+          <li><strong>Rebase:</strong>
+            <pre><code>git rebase main</code></pre>
+          </li>
+          <li><strong>Resolve Merge Conflicts:</strong> Fix conflicted files, then:
+            <pre><code>git add .
+git commit</code></pre>
+          </li>
+        </ul>
+
+        <h3>10. Cloning a Repo</h3>
+        <pre><code>git clone https://github.com/user/repo-name.git</code></pre>
+
+        <h3>11. Contributing to Open Source</h3>
+        <ol>
+          <li>Fork a repository on GitHub.</li>
+          <li>Clone it:
+            <pre><code>git clone https://github.com/your-username/forked-repo.git</code></pre>
+          </li>
+          <li>Make changes, commit, and push.</li>
+          <li>Open a Pull Request (PR) on GitHub.</li>
+        </ol>
+
+        <h2>Golden Rules</h2>
+        <ul>
+          <li><strong>Commit often:</strong> Don't wait for big changes.</li>
+          <li><strong>Write clear commit messages:</strong> Summarize what changed.</li>
+          <li><strong>Pull before you push:</strong> Always get the latest changes.</li>
+        </ul>
 
         <div class="post-navigation">
           <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
