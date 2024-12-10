@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A straightforward guide to installing Linux Mint - perfect for beginners transitioning from Windows" />
+    <title>No BS Guide to Installing Linux Mint | Taha Ali Khan</title>
+
+    <!-- External CSS and Font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../blog-styles.css" />
+    <style>
+      .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        color: var(--text-primary);
+      }
+      
+      .post-content h1, .post-content h2, .post-content h3 {
+        color: var(--gold);
+        margin: 1.5em 0 0.5em;
+      }
+
+      .post-content h1 { font-size: 2.5rem; }
+      .post-content h2 { font-size: 2rem; }
+      .post-content h3 { font-size: 1.5rem; }
+      
+      .post-content code {
+        background-color: var(--bg-secondary);
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+        color: var(--text-primary);
+      }
+      
+      .post-content pre {
+        background-color: var(--bg-secondary);
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid var(--card-border);
+        margin: 1em 0;
+      }
+      
+      .post-content pre code {
+        padding: 0;
+        background: none;
+      }
+      
+      .post-content ul, .post-content ol {
+        margin: 1em 0 1em 1.5em;
+        line-height: 1.6;
+      }
+
+      .post-content ul ul, 
+      .post-content ol ul,
+      .post-content ul ol,
+      .post-content ol ol {
+        margin: 0.5em 0 0.5em 1.5em;
+      }
+      
+      .post-content p {
+        margin: 1em 0;
+        line-height: 1.6;
+      }
+
+      .post-content a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+
+      .post-content a:hover {
+        text-decoration: underline;
+      }
+      
+      .highlight {
+        color: var(--gold);
+        font-weight: bold;
+      }
+      
+      .post-meta {
+        margin: 20px 0;
+        color: var(--text-primary);
+        opacity: 0.8;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .post-meta i {
+        color: var(--gold);
+        margin-right: 5px;
+      }
+      
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--card-border);
+      }
+      
+      .post-navigation a {
+        color: var(--gold);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .post-navigation a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .post-content {
+          padding: 15px;
+        }
+
+        .post-content h1 { font-size: 2rem; }
+        .post-content h2 { font-size: 1.5rem; }
+        .post-content h3 { font-size: 1.25rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-brand">
+        <img src="../images/Taha Ali Khan.gif" alt="Taha Ali Khan's Logo" class="logo" width="60" height="60" />
+        <span>Welcome To My Blog</span>
+      </div>
+      <div class="navbar-links" role="menubar">
+        <a href="../index.html#about" role="menuitem">About</a>
+        <a href="../index.html#skills" role="menuitem">Skills</a>
+        <a href="../index.html#experience" role="menuitem">Experience</a>
+        <a href="../index.html#github-projects" role="menuitem">GitHub</a>
+        <a href="../index.html#projects" role="menuitem">Projects</a>
+        <a href="../blog.html" role="menuitem">Blog</a>
+        <a href="../index.html#contact" role="menuitem">Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+      <article class="post-content">
+        <div class="post-meta">
+          <span><i class="far fa-calendar"></i> March 13, 2024</span>
+          <span><i class="far fa-clock"></i> 10 min read</span>
+          <span><i class="far fa-folder"></i> Technology</span>
+        </div>
+
+        <h1>No BS Guide to Installing Linux Mint</h1>
+
+        <h2>What is Linux Mint?</h2>
+        <p>Linux Mint is a free and open-source operating system based on Ubuntu or Debian. It's fast, user-friendly, and perfect for beginners transitioning from Windows.</p>
+
+        <h2>What You'll Need</h2>
+        <ul>
+          <li>A USB drive (at least 4GB).</li>
+          <li>A computer with at least 2GB RAM and 20GB storage.</li>
+          <li>Access to the internet for downloading files.</li>
+        </ul>
+
+        <h2>Step-by-Step Installation</h2>
+
+        <h3>Step 1: Download Linux Mint</h3>
+        <ol>
+          <li>Go to the <a href="https://linuxmint.com/download.php" target="_blank">Linux Mint website</a>.</li>
+          <li>Pick a version (Cinnamon, MATE, or Xfce). For most, <strong>Cinnamon</strong> is the best choice.</li>
+          <li>Download the ISO file (around 2GB).</li>
+        </ol>
+
+        <h3>Step 2: Create a Bootable USB</h3>
+        <ol>
+          <li>Download and install a tool like <a href="https://rufus.ie" target="_blank">Rufus</a> (Windows) or <a href="https://etcher.balena.io" target="_blank">Balena Etcher</a> (Mac/Linux).</li>
+          <li>Plug in your USB drive.</li>
+          <li>Open Rufus/Etcher:
+            <ul>
+              <li>Select your USB drive.</li>
+              <li>Choose the Linux Mint ISO file you downloaded.</li>
+              <li>Click <strong>Start</strong> (Rufus) or <strong>Flash</strong> (Etcher).</li>
+            </ul>
+          </li>
+          <li>Wait for the process to finish. This will overwrite the USB drive.</li>
+        </ol>
+
+        <h3>Step 3: Boot from the USB</h3>
+        <ol>
+          <li>Plug the USB into the computer where you want to install Linux Mint.</li>
+          <li>Restart the computer and enter the BIOS/Boot menu:
+            <ul>
+              <li>Press a key like <code>F2</code>, <code>F12</code>, <code>DEL</code>, or <code>ESC</code> during startup (varies by brand).</li>
+            </ul>
+          </li>
+          <li>Select the USB drive as the boot option and press <strong>Enter</strong>.</li>
+        </ol>
+
+        <h3>Step 4: Start Linux Mint Live Session</h3>
+        <ol>
+          <li>After booting, you'll see a menu. Select <strong>Start Linux Mint</strong>.</li>
+          <li>This loads a live session, where you can try Linux Mint without installing it. (But you're here to install, so proceed.)</li>
+        </ol>
+
+        <h3>Step 5: Install Linux Mint</h3>
+        <ol>
+          <li>Double-click the <strong>Install Linux Mint</strong> icon on the desktop.</li>
+          <li>Follow the prompts:
+            <ul>
+              <li>Select your language and keyboard layout.</li>
+              <li>Choose <strong>Install third-party software</strong> (for drivers, codecs, etc.).</li>
+              <li>For disk setup, select:
+                <ul>
+                  <li><strong>Erase disk and install Linux Mint</strong> (if you don't need existing data).</li>
+                  <li>Or <strong>Something else</strong> for custom partitioning.</li>
+                </ul>
+              </li>
+              <li>Select your timezone.</li>
+              <li>Create a username and password.</li>
+            </ul>
+          </li>
+          <li>Click <strong>Install Now</strong>.</li>
+        </ol>
+
+        <h3>Step 6: Reboot and Enjoy</h3>
+        <ol>
+          <li>Once installation finishes, remove the USB drive when prompted.</li>
+          <li>Reboot your system.</li>
+          <li>Log in with the username and password you created.</li>
+        </ol>
+
+        <h2>Post-Installation Tips</h2>
+        <ul>
+          <li><strong>Update your system:</strong>
+            <pre><code>sudo apt update && sudo apt upgrade -y</code></pre>
+          </li>
+          <li><strong>Install additional software:</strong> Use the Software Manager or terminal:
+            <pre><code>sudo apt install <package_name></code></pre>
+          </li>
+          <li><strong>Explore Settings:</strong> Customize the look and feel, set up printers, and configure drivers.</li>
+        </ul>
+
+        <h2>Common Pitfalls and Solutions</h2>
+        <ul>
+          <li><strong>Can't Boot from USB:</strong> Enable USB boot in BIOS and disable Secure Boot if necessary.</li>
+          <li><strong>Wi-Fi Not Working:</strong> Check for driver updates using <code>Driver Manager</code>.</li>
+          <li><strong>Slow Performance:</strong> Enable swap space and disable animations in system settings.</li>
+        </ul>
+
+        <h2>Why Linux Mint?</h2>
+        <ul>
+          <li>Simple and intuitive interface.</li>
+          <li>Lightweight and fast, even on older hardware.</li>
+          <li>Free and open-source with excellent community support.</li>
+        </ul>
+
+        <h2>Done!</h2>
+        <p>That's it. You're now running Linux Mint. Enjoy your new, efficient, and customizable operating system. No fluff, just results!</p>
+
+        <div class="post-navigation">
+          <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Taha Ali Khan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+  </body>
+</html> 
