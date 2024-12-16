@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn how to write efficient prompts for AI tools like GPT and Claude to get the best results. Tips, examples, and common mistakes included." />
+    <title>How to Write Efficient Prompts for GPT and Claude | Taha Ali Khan</title>
+
+    <!-- External CSS and Font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../blog-styles.css" />
+    <style>
+      .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        color: var(--text-primary);
+      }
+      
+      .post-content h1, .post-content h2, .post-content h3 {
+        color: var(--gold);
+        margin: 2em 0 1em;
+      }
+
+      .post-content h1 { 
+        font-size: 2.5rem;
+        margin-top: 0.5em;
+      }
+      
+      .post-content h2 { 
+        font-size: 2rem;
+        padding-top: 1em;
+      }
+      
+      .post-content h3 { 
+        font-size: 1.5rem;
+        margin-top: 1.5em;
+      }
+      
+      .post-content section {
+        margin-bottom: 3em;
+      }
+      
+      .post-content code {
+        background-color: var(--bg-secondary);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+        color: var(--text-primary);
+        font-size: 0.95em;
+      }
+      
+      .post-content pre {
+        background-color: var(--bg-secondary);
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid var(--card-border);
+        margin: 1.5em 0;
+      }
+      
+      .post-content pre code {
+        padding: 0;
+        background: none;
+      }
+      
+      .post-content ul, .post-content ol {
+        margin: 1.5em 0 1.5em 2em;
+        line-height: 1.8;
+      }
+
+      .post-content ul ul, 
+      .post-content ol ul,
+      .post-content ul ol,
+      .post-content ol ol {
+        margin: 0.8em 0 0.8em 2em;
+      }
+      
+      .post-content li {
+        margin-bottom: 0.8em;
+      }
+      
+      .post-content p {
+        margin: 1.5em 0;
+        line-height: 1.8;
+        font-size: 1.1em;
+      }
+
+      .post-content a {
+        color: var(--gold);
+        text-decoration: none;
+        padding-bottom: 1px;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+      }
+
+      .post-content a:hover {
+        text-decoration: none;
+        border-bottom-color: var(--gold);
+      }
+      
+      .highlight {
+        color: var(--gold);
+        font-weight: bold;
+      }
+      
+      .post-meta {
+        margin: 30px 0;
+        color: var(--text-primary);
+        opacity: 0.8;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        font-size: 1.1em;
+      }
+
+      .post-meta i {
+        color: var(--gold);
+        margin-right: 8px;
+      }
+      
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 1px solid var(--card-border);
+      }
+      
+      .post-navigation a {
+        color: var(--gold);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1em;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .post-navigation a:hover {
+        text-decoration: none;
+        background-color: var(--bg-secondary);
+      }
+
+      @media (max-width: 768px) {
+        .post-content {
+          padding: 30px 15px;
+        }
+
+        .post-content h1 { font-size: 2rem; }
+        .post-content h2 { font-size: 1.5rem; }
+        .post-content h3 { font-size: 1.25rem; }
+        
+        .post-content p,
+        .post-content li {
+          font-size: 1em;
+        }
+        
+        .post-meta {
+          gap: 20px;
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-brand">
+        <img src="../images/Taha Ali Khan.gif" alt="Taha Ali Khan's Logo" class="logo" width="60" height="60" />
+        <span>Welcome To My Blog</span>
+      </div>
+      <div class="navbar-links" role="menubar">
+        <a href="../index.html#about" role="menuitem">About</a>
+        <a href="../index.html#skills" role="menuitem">Skills</a>
+        <a href="../index.html#experience" role="menuitem">Experience</a>
+        <a href="../index.html#github-projects" role="menuitem">GitHub</a>
+        <a href="../index.html#projects" role="menuitem">Projects</a>
+        <a href="../blog.html" role="menuitem">Blog</a>
+        <a href="../index.html#contact" role="menuitem">Contact</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+        <span class="navbar-hamburger"></span>
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+      <article class="post-content">
+        <div class="post-meta">
+          <span><i class="far fa-calendar"></i> March 13, 2024</span>
+          <span><i class="far fa-clock"></i> 10 min read</span>
+          <span><i class="far fa-folder"></i> Technology</span>
+        </div>
+
+        <h1>How to Write Efficient Prompts for GPT and Claude</h1>
+
+        <section>
+          <h2>Introduction</h2>
+          <p>AI tools like GPT and Claude have transformed the way we approach writing, problem-solving, and creative tasks. However, the key to unlocking their full potential lies in how you ask them to help you. Writing efficient prompts is crucial for generating high-quality outputs, saving time, and achieving the desired results. In this post, we'll explore actionable tips and examples to help you craft better prompts for these AI tools.</p>
+        </section>
+
+        <section>
+          <h2>What Makes a Good Prompt?</h2>
+          <p>Good prompts share a few essential characteristics:</p>
+          <ul>
+            <li><strong>Clarity:</strong> The prompt should clearly communicate what you want.</li>
+            <li><strong>Context:</strong> Provide enough background information to guide the AI.</li>
+            <li><strong>Specificity:</strong> Clearly state the desired format, tone, or outcome.</li>
+          </ul>
+          <p>Think of it this way: <em>You get what you ask for</em>. If your prompt is vague, the AI's response will likely be just as unclear.</p>
+        </section>
+
+        <section>
+          <h2>Common Prompt Structures</h2>
+          <p>Here are a few reliable prompt structures to get you started:</p>
+          <ul>
+            <li><strong>Question-Based:</strong> Ask a direct question. For example: <code>"How does photosynthesis work?"</code></li>
+            <li><strong>Instruction-Based:</strong> Provide clear instructions. For example: <code>"Write an email explaining the benefits of remote work."</code></li>
+            <li><strong>Context + Task:</strong> Combine background information with a specific task. For example: <code>"You are a professional chef. Create a recipe for a vegan dessert that takes less than 30 minutes to prepare."</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Tips for Writing Efficient Prompts</h2>
+          <p>Follow these tips to improve your prompt-writing skills:</p>
+          <ul>
+            <li><strong>Start with clarity:</strong> Clearly state the role you want the AI to assume (e.g., teacher, programmer, marketer).</li>
+            <li><strong>Provide examples:</strong> Include examples of the output you expect to guide the AI.</li>
+            <li><strong>Set constraints:</strong> Specify word count, tone, or style preferences.</li>
+            <li><strong>Iterate:</strong> If the first response isn't ideal, refine your prompt and try again.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Advanced Prompting Techniques</h2>
+          <p>For more complex tasks, try these advanced techniques:</p>
+          <ul>
+            <li><strong>System Roles:</strong> Assign the AI a role. For example: <code>"Act as a career coach. Give advice on improving public speaking skills."</code></li>
+            <li><strong>Multi-Step Instructions:</strong> Break tasks into smaller steps. For example: <code>"First, summarize the article. Then, list three key takeaways."</code></li>
+            <li><strong>Prompt Chaining:</strong> Use outputs from one prompt as inputs for the next to build on the task.</li>
+            <li><strong>Few-Shot Prompting:</strong> Provide a few examples to set the standard for the response.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Common Mistakes to Avoid</h2>
+          <p>Here are some common pitfalls to watch out for:</p>
+          <ul>
+            <li><strong>Overloading the Prompt:</strong> Too much information can confuse the AI. Be concise.</li>
+            <li><strong>Lack of Details:</strong> Vague prompts often lead to generic or unhelpful results.</li>
+            <li><strong>Unrealistic Expectations:</strong> AI is powerful but has its limits. Be realistic about what it can achieve.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Case Studies: Good vs. Bad Prompts</h2>
+          <p>Let's look at a couple of examples:</p>
+
+          <h3>Example 1: Writing a Blog Intro</h3>
+          <ul>
+            <li><strong>Bad Prompt:</strong> <code>"Write a blog intro."</code></li>
+            <li><strong>Good Prompt:</strong> <code>"Write a catchy introduction for a blog post about sustainable travel, targeting eco-conscious millennials."</code></li>
+          </ul>
+
+          <h3>Example 2: Coding Assistance</h3>
+          <ul>
+            <li><strong>Bad Prompt:</strong> <code>"Write code for a website."</code></li>
+            <li><strong>Good Prompt:</strong> <code>"Write a Python script for a simple static website with a homepage and contact form, using Flask."</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>Crafting efficient prompts is a skill that takes practice, but the results are worth the effort. By focusing on clarity, specificity, and context, you can unlock the full potential of tools like GPT and Claude. Start experimenting with these tips today and see how your results improve!</p>
+        </section>
+
+        <div class="post-navigation">
+          <a href="../blog.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Taha Ali Khan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+  </body>
+</html> 
