@@ -118,90 +118,222 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(skills);
   }
 
-  // Fetch and display GitHub repositories
+  // GitHub section configuration
   const username = "tahaalikhan123";
   const repoList = document.querySelector(".repo-grid");
+  const githubSection = document.getElementById("github-projects");
 
-  if (repoList) {
-    // Add loading state
-    repoList.classList.add("loading");
+  // Language colors for the dots
+  const languageColors = {
+    JavaScript: "#f1e05a",
+    Python: "#3572A5",
+    HTML: "#e34c26",
+    CSS: "#563d7c",
+    TypeScript: "#2b7489",
+    Java: "#b07219",
+    "C++": "#f34b7d",
+    Ruby: "#701516",
+    PHP: "#4F5D95",
+    default: "#6e7681"
+  };
+
+  // Format date to relative time
+  function getRelativeTime(date) {
+    const now = new Date();
+    const past = new Date(date);
+    const diffTime = Math.abs(now - past);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-    fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=10`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // Remove loading state
-        repoList.classList.remove("loading");
-        repoList.innerHTML = ""; // Clear loading state
-        
-        if (data.length === 0) {
-          repoList.innerHTML = "<p>No repositories found.</p>";
-          return;
-        }
-        
-        data.forEach((repo) => {
-          const repoCard = document.createElement("div");
-          repoCard.className = "repo-card";
-          repoCard.setAttribute("aria-label", `Repository: ${repo.name}`);
-          repoCard.innerHTML = `
-            <h3>${repo.name}</h3>
-            <p>${repo.description || "No description available."}</p>
-            <div class="repo-stats" aria-label="Repository statistics">
-              <div><i class="fas fa-star" aria-hidden="true"></i> <span>${repo.stargazers_count} Stars</span></div>
-              <div><i class="fas fa-code-branch" aria-hidden="true"></i> <span>${repo.forks_count} Forks</span></div>
+    if (diffDays === 1) return "yesterday";
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  }
+
+  // Fetch GitHub stats
+  async function fetchGitHubStats() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      
+      // Update stats cards
+      if (githubSection) {
+        const statsHTML = `
+          <div class="github-stats">
+            <div class="stat-card">
+              <i class="fas fa-code-branch"></i>
+              <h4>Repositories</h4>
+              <span class="stat-value">${data.public_repos}</span>
             </div>
-            <a href="${repo.html_url}" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               aria-label="View ${repo.name} on GitHub">View on GitHub</a>
-          `;
-          repoList.appendChild(repoCard);
-        });
-      })
-      .catch((error) => {
-        console.error("Error fetching repos:", error);
-        repoList.classList.remove("loading");
-        repoList.innerHTML = `
-          <div class="error-message">
-            <p>Failed to load repositories. Please try again later.</p>
-            <button onclick="retryFetchRepos()" class="retry-button">
-              Retry
-            </button>
+            <div class="stat-card">
+              <i class="fas fa-users"></i>
+              <h4>Followers</h4>
+              <span class="stat-value">${data.followers}</span>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-star"></i>
+              <h4>Total Stars</h4>
+              <span class="stat-value" id="total-stars">0</span>
+            </div>
           </div>
         `;
-      });
+        
+        const contributionChart = githubSection.querySelector(".github-contribution-chart");
+        contributionChart.insertAdjacentHTML("afterend", statsHTML);
+      }
+      
+      return data;
+    } catch (error) {
+      console.error("Error fetching GitHub stats:", error);
+      // Handle error gracefully
+    }
   }
+
+  // Fetch repositories
+  async function fetchRepositories() {
+    if (!repoList) return;
+    
+    // Add loading state
+    repoList.innerHTML = `
+      <div class="loading-message">
+        <i class="fas fa-spinner fa-spin"></i>
+        <span>Loading repositories...</span>
+      </div>
+    `;
+    
+    try {
+      const response = await fetch(
+        `https://api.github.com/users/${username}/repos?sort=updated&per_page=10`
+      );
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const repos = await response.json();
+      
+      // Calculate total stars
+      const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+      const totalStarsElement = document.getElementById("total-stars");
+      if (totalStarsElement) totalStarsElement.textContent = totalStars;
+      
+      // Display repositories
+      repoList.innerHTML = "";
+      
+      if (repos.length === 0) {
+        repoList.innerHTML = `
+          <div class="error-message">
+            <p>No repositories found.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      repos.forEach(repo => {
+        const languageColor = languageColors[repo.language] || languageColors.default;
+        const updatedAt = getRelativeTime(repo.updated_at);
+        
+        const repoCard = document.createElement("div");
+        repoCard.className = "repo-card";
+        repoCard.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p>${repo.description || "No description available."}</p>
+          ${repo.language ? `
+            <div class="repo-language">
+              <span class="language-dot" style="background-color: ${languageColor}"></span>
+              ${repo.language}
+            </div>
+          ` : ''}
+          <div class="repo-meta">
+            <span>Updated ${updatedAt}</span>
+            <span>${(repo.size / 1024).toFixed(1)} MB</span>
+          </div>
+          <div class="repo-stats">
+            <div><i class="fas fa-star"></i> ${repo.stargazers_count}</div>
+            <div><i class="fas fa-code-branch"></i> ${repo.forks_count}</div>
+            <div><i class="fas fa-eye"></i> ${repo.watchers_count}</div>
+          </div>
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            View Repository
+          </a>
+        `;
+        repoList.appendChild(repoCard);
+      });
+    } catch (error) {
+      console.error("Error fetching repos:", error);
+      repoList.innerHTML = `
+        <div class="error-message">
+          <p>Failed to load repositories. Please try again later.</p>
+          <button onclick="retryFetchRepos()" class="retry-button">
+            <i class="fas fa-sync-alt"></i> Retry
+          </button>
+        </div>
+      `;
+    }
+  }
+
+  // Initialize GitHub data
+  fetchGitHubStats();
+  fetchRepositories();
 
   // Add retry function for repository fetch
   window.retryFetchRepos = function() {
-    const repoList = document.querySelector(".repo-grid");
-    if (repoList) {
-      repoList.innerHTML = "";
-      fetchRepositories();
-    }
+    fetchRepositories();
   };
 
-  // Initialize GitHub Contribution Chart with more options
+  // Initialize GitHub Calendar with improved options
   if (typeof GitHubCalendar !== "undefined") {
-    GitHubCalendar(".calendar", username, {
-      responsive: true,
-      tooltips: true,
-      global_stats: true,
-      cache: 24 * 60 * 60 * 1000, // 24 hours cache
-      onFetchError: (error) => {
-        console.error("Error fetching GitHub calendar data:", error);
-        const calendarElement = document.querySelector(".calendar");
-        if (calendarElement) {
-          calendarElement.innerHTML =
-            "Failed to load GitHub contributions. Please try again later.";
+    const calendar = document.querySelector(".calendar");
+    if (calendar) {
+      const contributionChart = calendar.closest(".github-contribution-chart");
+      if (contributionChart) {
+        contributionChart.classList.add("loading");
+      }
+      
+      GitHubCalendar(".calendar", username, {
+        responsive: true,
+        tooltips: true,
+        global_stats: true,
+        cache: 24 * 60 * 60 * 1000, // 24 hours cache
+        transformData: (data) => {
+          // Add custom data transformation if needed
+          return data;
+        },
+        onLoad: () => {
+          if (contributionChart) {
+            contributionChart.classList.remove("loading");
+          }
+        },
+        onFetchError: (error) => {
+          console.error("Error fetching GitHub calendar data:", error);
+          calendar.innerHTML = `
+            <div class="error-message">
+              <p>Failed to load GitHub contributions. Please try again later.</p>
+              <button onclick="retryGitHubCalendar()" class="retry-button">
+                <i class="fas fa-sync-alt"></i> Retry
+              </button>
+            </div>
+          `;
         }
-      },
-    });
+      });
+    }
   }
+
+  // Add retry function for GitHub calendar
+  window.retryGitHubCalendar = function() {
+    const calendar = document.querySelector(".calendar");
+    const contributionChart = calendar?.closest(".github-contribution-chart");
+    
+    if (calendar && contributionChart) {
+      calendar.innerHTML = "";
+      contributionChart.classList.add("loading");
+      
+      GitHubCalendar(".calendar", username, {
+        responsive: true,
+        tooltips: true,
+        global_stats: true
+      });
+    }
+  };
 
   // Add smooth scrolling for all internal links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
