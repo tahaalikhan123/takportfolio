@@ -310,30 +310,12 @@ document.addEventListener("DOMContentLoaded", function () {
         tooltips: true,
         global_stats: false,
         proxy: function(url) {
-          // Use GitHub API directly instead of CORS proxy
-          const apiUrl = `https://api.github.com/users/${username}/contributions`;
-          return fetch(apiUrl)
+          // Use a CORS proxy to fetch the real contributions SVG from github.com
+          const corsProxy = "https://cors.bridged.cc/";
+          return fetch(corsProxy + url)
             .then(response => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
               return response.text();
-            })
-            .catch(error => {
-              console.error("Error fetching GitHub data:", error);
-              if (calendar) {
-                calendar.innerHTML = `
-                  <div class="error-message">
-                    <p>To view the GitHub contribution graph, please visit: <a href="https://github.com/${username}" target="_blank">github.com/${username}</a></p>
-                    <p>Due to GitHub's API limitations, the graph cannot be displayed directly.</p>
-                  </div>
-                `;
-              }
-              // Remove loading state on error
-              if (contributionChart) {
-                contributionChart.classList.remove("loading");
-              }
-              throw error;
             });
         }
       }).then(() => {
