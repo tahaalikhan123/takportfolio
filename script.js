@@ -5,14 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Prevent automatic scroll to a section like #projects on page load
   if (window.location.hash) {
     // Prevent the default scroll
-    event.preventDefault();
-
-    // Remove the hash from the URL without triggering a page reload
-    history.pushState(
-      "",
-      document.title,
-      window.location.pathname + window.location.search
-    );
+    // Use window.location.replace to remove hash without page reload
+    history.replaceState(null, null, ' ');
 
     // Optionally, scroll to the top of the page
     window.scrollTo(0, 0);
