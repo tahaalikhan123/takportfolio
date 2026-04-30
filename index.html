@@ -32,6 +32,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -46,7 +47,6 @@
         <a href="#skills" role="menuitem">Skills</a>
         <a href="#experience" role="menuitem">Experience</a>
         <a href="#github-projects" role="menuitem">GitHub</a>
-        <a href="#projects" role="menuitem">Projects</a>
         <a href="blog.html" role="menuitem">Blog</a>
         <a href="#contact" role="menuitem">Contact</a>
       </div>
@@ -167,6 +167,21 @@
     <section id="experience" class="experience-section">
       <h2>Experience</h2>
       <div class="timeline">
+        <!-- Head of Digital Transformation - Najah Media -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Head of Digital Transformation - Najah Media</h3>
+            <span>September 2024 – Present | Dubai, UAE</span>
+            <ul class="timeline-achievements">
+              <li>Develop and implement a comprehensive digital transformation strategy aligned with Najah Media's business goals</li>
+              <li>Identify emerging technologies and trends that can drive growth, efficiency, and innovation</li>
+              <li>Lead the integration of AI, data analytics, automation, and other advanced technologies to enhance operations and marketing strategies</li>
+              <li>Work closely with marketing, IT, data, and creative teams to ensure seamless digital initiatives</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Data Engineer - Walmart -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
@@ -224,7 +239,12 @@
       <!-- GitHub Contribution Chart -->
       <div class="github-contribution-chart">
         <h3>Contribution Activity</h3>
-        <div class="calendar"></div>
+        <div class="calendar">
+          <div class="loading-message">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Loading GitHub contributions...</span>
+          </div>
+        </div>
       </div>
 
       <!-- GitHub Repositories Grid -->
@@ -241,7 +261,7 @@
         <div class="project-card">
           <h3>CLV</h3>
           <img
-            src="https://via.placeholder.com/400x200?text=CLV"
+            src="images/clv-project.png"
             alt="CLV Report"
             class="project-image"
             onclick="openLightbox(this)"
@@ -262,7 +282,7 @@
         <div class="project-card">
           <h3>RFM</h3>
           <img
-            src="https://via.placeholder.com/400x200?text=RFM"
+            src="images/rfm-project.png"
             alt="RFM_Dashboard"
             class="project-image"
           />
@@ -278,17 +298,13 @@
         <!-- Project 3: Helpdesk Solution -->
         <div class="project-card">
           <h3>Helpdesk Solution</h3>
-          <a
-            href="https://youtu.be/fcRN-sfbjdo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div class="project-image">
             <img
-              src="https://img.youtube.com/vi/fcRN-sfbjdo/0.jpg"
+              src="images/helpdesk-project.png"
               alt="Helpdesk Solution"
               class="project-image"
             />
-          </a>
+          </div>
           <p>Innovative helpdesk system for streamlined customer support.</p>
           <a href="#" class="project-btn cta-btn">Join the Waitlist</a>
         </div>

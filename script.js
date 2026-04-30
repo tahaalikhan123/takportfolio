@@ -160,6 +160,17 @@ document.addEventListener("DOMContentLoaded", function () {
       
       // Update stats cards
       if (githubSection) {
+        // Check if stats already exist
+        const existingStats = githubSection.querySelector('.github-stats');
+        if (existingStats) {
+          // Update existing stats instead of creating new ones
+          const reposValue = existingStats.querySelector('.stat-card:nth-child(1) .stat-value');
+          const followersValue = existingStats.querySelector('.stat-card:nth-child(2) .stat-value');
+          if (reposValue) reposValue.textContent = data.public_repos;
+          if (followersValue) followersValue.textContent = data.followers;
+          return data;
+        }
+
         const statsHTML = `
           <div class="github-stats">
             <div class="stat-card">
@@ -180,8 +191,17 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `;
         
+        // Insert stats after the contribution chart
         const contributionChart = githubSection.querySelector(".github-contribution-chart");
-        contributionChart.insertAdjacentHTML("afterend", statsHTML);
+        if (contributionChart) {
+          contributionChart.insertAdjacentHTML("afterend", statsHTML);
+        } else {
+          // If no contribution chart, insert before repo grid
+          const repoGrid = githubSection.querySelector(".repo-grid");
+          if (repoGrid) {
+            repoGrid.insertAdjacentHTML("beforebegin", statsHTML);
+          }
+        }
       }
       
       return data;
@@ -280,40 +300,55 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchRepositories();
   };
 
-  // Initialize GitHub Calendar with improved options
+  // Initialize GitHub Calendar
   if (typeof GitHubCalendar !== "undefined") {
     const calendar = document.querySelector(".calendar");
     if (calendar) {
       const contributionChart = calendar.closest(".github-contribution-chart");
+      
+      // Add loading state
       if (contributionChart) {
         contributionChart.classList.add("loading");
       }
-      
+
       GitHubCalendar(".calendar", username, {
         responsive: true,
         tooltips: true,
-        global_stats: true,
-        cache: 24 * 60 * 60 * 1000, // 24 hours cache
-        transformData: (data) => {
-          // Add custom data transformation if needed
-          return data;
-        },
-        onLoad: () => {
-          if (contributionChart) {
-            contributionChart.classList.remove("loading");
-          }
-        },
-        onFetchError: (error) => {
-          console.error("Error fetching GitHub calendar data:", error);
-          calendar.innerHTML = `
-            <div class="error-message">
-              <p>Failed to load GitHub contributions. Please try again later.</p>
-              <button onclick="retryGitHubCalendar()" class="retry-button">
-                <i class="fas fa-sync-alt"></i> Retry
-              </button>
-            </div>
-          `;
+        global_stats: false,
+        proxy: function(url) {
+          // Use GitHub API directly instead of CORS proxy
+          const apiUrl = `https://api.github.com/users/${username}/contributions`;
+          return fetch(apiUrl)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.text();
+            })
+            .catch(error => {
+              console.error("Error fetching GitHub data:", error);
+              if (calendar) {
+                calendar.innerHTML = `
+                  <div class="error-message">
+                    <p>To view the GitHub contribution graph, please visit: <a href="https://github.com/${username}" target="_blank">github.com/${username}</a></p>
+                    <p>Due to GitHub's API limitations, the graph cannot be displayed directly.</p>
+                  </div>
+                `;
+              }
+              // Remove loading state on error
+              if (contributionChart) {
+                contributionChart.classList.remove("loading");
+              }
+              throw error;
+            });
         }
+      }).then(() => {
+        // Remove loading state on success
+        if (contributionChart) {
+          contributionChart.classList.remove("loading");
+        }
+      }).catch(error => {
+        console.error("Failed to initialize GitHub Calendar:", error);
       });
     }
   }
@@ -330,7 +365,18 @@ document.addEventListener("DOMContentLoaded", function () {
       GitHubCalendar(".calendar", username, {
         responsive: true,
         tooltips: true,
-        global_stats: true
+        global_stats: false,
+        proxy: function(url) {
+          const corsProxy = "https://cors-anywhere.herokuapp.com/";
+          return fetch(corsProxy + url)
+            .then(response => {
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return response.text();
+            });
+        },
+        onLoad: function() {
+          contributionChart.classList.remove("loading");
+        }
       });
     }
   };
